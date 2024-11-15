@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* O la fuente que prefieras */
+    margin: 0;
+  }
+  
+  /* Estilos de la barra de navegación */
+  .navbar {
+    background-color: #222; /* Color de fondo negro */
+    color: #fff; /* Color del texto blanco */
+    padding: 20px;
+    display: flex;
+    justify-content: space-around; /* Distribuir elementos */
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 960px; /* Ajustar según tus necesidades */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 20px; /* Ajustar según tus necesidades */
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Estilos del menú */
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin: 0 15px; /* Ajustar según tus necesidades */
+    position: relative;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px; /* Ajustar según tus necesidades */
+    transition: color 0.3s ease; /* Transición suave para el color */
+  }
+  
+  .menu a:hover {
+    color: #ba4ef0; /* Cambiar color al pasar el mouse */
+  }
+  
+  /* Estilos del submenú */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333333c4;
+    min-width: 180px; /* Ajustar según tus necesidades */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(10px); /* Inicialmente desplazado hacia abajo */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  }
+  
+  .submenu li {
+    margin: 0;
+    padding: 10px 15px; /* Ajustar según tus necesidades */
+    border-bottom: 1px solid #22222251; /* Separador entre elementos del submenú */
+  }
+  
+  .submenu li:last-child {
+    border-bottom: none; /* Quitar el borde del último elemento */
+  }
+  
+  .submenu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px; /* Ajustar según tus necesidades */
+    display: block; /* Ocupar todo el ancho del elemento li */
+  }
+  
+  .dropdown:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
