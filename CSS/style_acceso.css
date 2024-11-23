@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2E2E2E, #1A1A1A); /* Degradado gris oscuro a negro */
+    color: #fff;
+}
+
+.login-container {
+    background: linear-gradient(135deg, #FFFFFF, #E0E0E0); /* Blanco a gris claro */
+    color: #333; /* Texto en gris oscuro */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #1A73E8; /* Azul brillante */
+    text-shadow: 1px 1px 3px rgba(26, 115, 232, 0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555; /* Gris intermedio */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #B0BEC5; /* Gris claro */
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #F5F5F5; /* Fondo gris claro */
+    color: #333; /* Texto en gris oscuro */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1A73E8; /* Azul brillante */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
+}
+
+.form-group button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1A73E8, #0044CC); /* Degradado azul brillante a intenso */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button:hover {
+    background: linear-gradient(135deg, #0044CC, #1A73E8); /* Invertido para resaltar */
+    transform: scale(1.03); /* Efecto de zoom */
+}
+
+.form-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555; /* Gris intermedio */
+}
+
+.form-footer a {
+    color: #1A73E8; /* Azul brillante */
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+    color: #0044CC; /* Azul intenso */
+}
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #8E98C1;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tabs a.active {
+    color: #1A73E8;
+    border-bottom: 2px solid #1A73E8;
+}

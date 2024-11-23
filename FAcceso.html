@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style_acceso.css">
+    <title>Inicio de Sesión</title>
+
+</head>
+<body>
+    <div class="login-container">
+            <div class="tabs">
+            <a href="#" class="active">Iniciar sesión</a> 
+            <a href="Registro.html" >Registrarse</a>
+        </div>
+
+        <h1>Inicio de Sesión</h1>
+        <form method="post" action="Acceso.php">
+            <div class="form-group">
+                <label for="UserName">Nombre de Usuario</label>
+                <input type="text" name="UserName" id="UserName" placeholder="Escribe tu usuario" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="Pwd">Contraseña</label>
+                <input type="password" name="Pwd" id="Pwd" placeholder="Escribe tu contraseña" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+        
+        </form>
+    </div>
+</body>
+</html>
+
