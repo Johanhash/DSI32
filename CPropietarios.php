@@ -2,6 +2,7 @@
     <form>
         <label>Criterio</label>
         <input type="text" Id="Criterio" Name="Criterio"><br>
+        <input type="radio" Id="Atributo" Name="Atributo" value="PropietarioID" required> ID Propietario<br>
         <input type="radio" Id="Atributo" Name="Atributo" value="rfc" required> RFC<br>
         <input type="radio" Id="Atributo" Name="Atributo" value="nombre"> Nombre <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="localidad"> Localidad <br>
@@ -25,6 +26,7 @@
 
         print("<table border='1' cellpadding='10' cellspacing='0'>");
         print("<tr>
+                <th>ID Propietario</th>
                 <th>RFC</th>
                 <th>Nombre</th>
                 <th>Localidad</th>

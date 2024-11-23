@@ -2,8 +2,9 @@
     <form>
         <label>Criterio</label>
         <input type="text" Id="Criterio" Name="Criterio"> <br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="conductorId" required >conductorId<br>
+        <input type="radio" Id="Atributo" Name="Atributo" value="conductorId" required >ConductorId<br>
         <input type="radio" Id="Atributo" Name="Atributo" value="nombre"> nombre <br>
+        <input type="radio" Id="Atributo" Name="Atributo" value="Apellido"> Apellido <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="fechaNac">fechaNac <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="TipoSangre"> TipoSangre <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="telefono"> Telefono <br>
@@ -28,6 +29,7 @@
         print("<tr>
                 <th>ConductorID</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Fecha Nacimiento</th>
                 <th>Domicilio</th>   
                 <th>Teléfono</th>

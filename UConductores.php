@@ -1,6 +1,7 @@
 <?php
     $ConductorID=$_GET['ConductorID'];
     $Nombre=$_GET['Nombre'];
+    $Apellido=$_GET['Apellido'];
     $FechaNac=$_GET['FechaNac'];
     $Domicilio=$_GET['Domicilio'];
     $Telefono=$_GET['Telefono'];
@@ -9,7 +10,7 @@
 
 
 
-    $SQL ="UPDATE Conductores SET Nombre='$Nombre',FechaNac='$FechaNac',
+    $SQL ="UPDATE Conductores SET Nombre='$Nombre',Apellido='$Apellido', FechaNac='$FechaNac',
     Domicilio='$Domicilio',Telefono='$Telefono',
     TipoSangre='$TipoSangre',
     DonadorOrg='$DonadorOrg'

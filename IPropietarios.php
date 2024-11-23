@@ -1,5 +1,6 @@
 <?php
 
+$PropietarioID =$_REQUEST['PropietarioID'];
 $RFC =$_REQUEST['RFC'];
 $Nombre =$_REQUEST['Nombre'];
 $Localidad =$_REQUEST['Localidad'];
@@ -9,7 +10,7 @@ $Municipio =$_REQUEST['Municipio'];
 
 
 
-    $SQL ="INSERT INTO Propietarios (RFC,Nombre,Localidad,Municipio) VALUES('$RFC','$Nombre','$Localidad','$Municipio')";
+    $SQL ="INSERT INTO Propietarios (PropietarioID,RFC,Nombre,Localidad,Municipio) VALUES('$PropietarioID','$RFC','$Nombre','$Localidad','$Municipio')";
     /*print($SQL)*/
 
 

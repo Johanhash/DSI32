@@ -1,7 +1,7 @@
 <?php
     include("Controlador.php");
     $ConductorID = $_GET['ConductorID'];
-    $SQL = "DELETE FROM Conductores WHERE conductorID='$ConductorID'";
+    $SQL = "DELETE FROM Conductores WHERE ConductorID='$ConductorID'";
     $Con = Conectar();
     $ResultSet = Ejecutar($Con, $SQL);
     

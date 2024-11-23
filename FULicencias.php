@@ -23,9 +23,13 @@ Desconectar($Con);
             <input type="text" name="Nombre" id="Nombre"
             value="<?php print($Fila[2]);?>">
             <br>
+            <label>Nombre</label>
+            <input type="text" name="Apellido" id="Apellido"
+            value="<?php print($Fila[3]);?>">
+            <br>
     <label>Tipo_Licencia</label>
         <select name="TipoLicencia" id="TipoLicencia"
-        value="<?php print($Fila[3]);?>"> 
+        value="<?php print($Fila[4]);?>"> 
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
@@ -33,31 +37,31 @@ Desconectar($Con);
         <br>
     <label>Fecha_Expedicion</label>
         <input type="date" name="FechaExp" id="FechaExp"
-        value="<?php print($Fila[4]);?>">
+        value="<?php print($Fila[5]);?>">
         <br>
     <label>Observacion</label>
         <input type="text" name="Observacion" id="Observacion"
-        value="<?php print($Fila[5]);?>">
+        value="<?php print($Fila[6]);?>">
     <br>
     <label>Antiguedad</label>
         <input type="number" name="Antiguedad" id="Antiguedad"
-        value="<?php print($Fila[6]);?>">
+        value="<?php print($Fila[7]);?>">
     <br>
     <label>Domicilio</label>
         <input type="text" name="Domicilio" id="Domicilio"
-        value="<?php print($Fila[7]);?>">
+        value="<?php print($Fila[8]);?>">
     <br>
     <label>Restriccion</label>
         <input type="text" name="Restriccion" id="Restriccion"
-        value="<?php print($Fila[8]);?>">
+        value="<?php print($Fila[9]);?>">
     <br>
     <label>Vigencia</label>
         <input type="date" name="Vigencia" id="Vigencia"
-        value="<?php print($Fila[9]);?>">
+        value="<?php print($Fila[10]);?>">
     <br>
     <label>Conductor</label>
-        <input type="number" name="Conductor" id="Conductor"
-        value="<?php print($Fila[10]);?>">
+        <input type="number" name="Conductorid" id="Conductorid"
+        value="<?php print($Fila[11]);?>">
     <br>
         <input type="submit">
     </form>

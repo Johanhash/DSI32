@@ -41,7 +41,7 @@ class PDF extends FPDF
         $this->Text(20, 30, 'No. de Licencia');
         $this->SetFont('Arial', 'B', 8);
         $this->SetTextColor(255, 0, 0); // Rojo
-        $this->text(15, 35, ''.$DatosLicencia[0].'');
+        $this->text(20, 35, ''.$DatosLicencia[0].'');
 
         // Tipo de licencia en negro
         $this->SetFont('Arial', 'B', 6);
@@ -62,26 +62,26 @@ class PDF extends FPDF
 
         $this->SetFont('Arial', '', 5);
         $this->Text(41,60,'Restricciones');
-        $this->text(15, 35, ''.$DatosLicencia[8].'');
+        $this->text(41, 64, ''.$DatosLicencia[8].'');
 
 
         // Información adicional (fechas y antigüedad)
         $this->SetFont('Arial', '', 5);
         $this->Text(4, 50, 'Fecha de Nacimiento');
         $this->SetFont('Arial', 'B', 5);
-        $this->Text(4, 52, ''.$DatosLicencia[8].'');
+        $this->Text(4, 52, ''.$DatosLicencia[10].'');
         $this->SetFont('Arial', '', 5);
         $this->Text(4, 54, 'Fecha de Expedicion');
         $this->SetFont('Arial', 'B', 5);
-        $this->Text(4, 56, ''.$DatosLicencia[8].'');
+        $this->Text(4, 56, ''.$DatosLicencia[3].'');
         $this->SetFont('Arial', '', 5);
         $this->Text(4, 58, 'Valida hasta');
         $this->SetFont('Arial', 'B', 5);
-        $this->Text(4, 60, ''.$DatosLicencia[8].'');
+        $this->Text(4, 60, ''.$DatosLicencia[7].'');
         $this->SetFont('Arial', '', 5);
         $this->Text(4, 62, 'Antiguedad');
         $this->SetFont('Arial', 'B', 5);
-        $this->Text(4, 64, ''.$DatosLicencia[8].'');
+        $this->Text(4, 64, ''.$DatosLicencia[5].'');
         $this->SetFont('Arial', '', 5);
         $this->Text(11, 66, 'Firma');
         $this->Image('firma.jpg', 8, 64, 10); // Firma del titular
@@ -96,7 +96,7 @@ class PDF extends FPDF
         $this->Rect(4, 78, 5, 5, 'F'); // Cuadro amarillo
         $this->SetFont('Arial', 'B', 7);
         $this->SetTextColor(0, 0, 0);
-        $this->Text(5.8, 81.5, 'A');
+        $this->Text(5.8, 81.5, ''.$DatosLicencia[2].'');
 
         $this->Image('caminos.jpg', 44.1, 75, 10); // Logo de la clase de licencia
         $this->Image('vehiculos.jpg', 10, 78.1, 20); // Logo de la secretaría
@@ -121,10 +121,8 @@ class PDF extends FPDF
         // Residencia y dirección
         $this->SetFont('Arial', '', 5);
         $this->Text(45, 18, 'Domicilio');
-
         $this->SetFont('Arial','B',5);
-        $this->Text(38.5,20, 'AVGUADALUPE');
-        
+        $this->Text(38.5,20, '');
         $this->Text(49.5,22, 'SN');
         $this->Text(42,24,'AMAZCALA');
         $this->Text(44,26,'CP 76250');
@@ -135,7 +133,7 @@ class PDF extends FPDF
         $this->SetFont('Arial', '', 5);
         $this->Text(38, 30, 'Grupo Sanguineo');
         $this->SetFont('Arial','B',5);
-        $this->Text(47,32,'ORH+');
+        $this->Text(47,32,'');
         $this->SetFont('Arial', '', 5);
         $this->Text(35, 34, 'Donador de Organos');
         $this->Image('qr.jpg',5,11,18,18);

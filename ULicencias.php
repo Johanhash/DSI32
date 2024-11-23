@@ -2,6 +2,7 @@
     $NoLicencia=$_REQUEST['NoLicencia'];
     $Foto=$_REQUEST['Foto'];
     $Nombre=$_REQUEST['Nombre'];
+    $Apellido=$_REQUEST['Apellido'];
     $TipoLicencia=$_REQUEST['TipoLicencia'];
     $FechaExp=$_REQUEST['FechaExp']; 
     $Observacion=$_REQUEST['Observacion'];
@@ -9,14 +10,14 @@
     $Domicilio =$_REQUEST['Domicilio'];
     $Restriccion =$_REQUEST['Restriccion'];
     $Vigencia =$_REQUEST['Vigencia'];
-    $Conductor =$_REQUEST['Conductor'];
+    $Conductorid =$_REQUEST['Conductorid'];
     
 
-    $SQL ="UPDATE Licencias SET Foto='$Foto',Nombre='$Nombre',
+    $SQL ="UPDATE Licencias SET Foto='$Foto',Nombre='$Nombre',Apellido='$Apellido',
     TipoLicencia='$TipoLicencia',FechaExp='$FechaExp',
     Observacion='$Observacion',Antiguedad='$Antiguedad',
     Domicilio='$Domicilio',Restriccion='$Restriccion',
-    Vigencia='$Vigencia',Conductor='$Conductor'
+    Vigencia='$Vigencia',Conductorid='$Conductorid'
     WHERE NoLicencia='$NoLicencia'";
     /*print($SQL)*/
 

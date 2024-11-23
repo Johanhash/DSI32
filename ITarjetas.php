@@ -1,12 +1,15 @@
 <?php
 
 $Folio =$_POST['Folio'];
+$rfcPropietario =$_POST['rfcPropietario'];
 $Vigencia =$_POST['Vigencia'];
 $FechaExp =$_POST['FechaExp'];
 $OficinaExp =$_POST['OficinaExp'];
 $Movimiento =$_POST['Movimiento'];
 $rfcPropietario =$_POST['rfcPropietario'];
 $NIV =$_POST['NIV'];
+$PropietarioID =$_POST['PropietarioID'];
+$VehiculoID =$_POST['VehiculoID'];
 
 
 
@@ -27,7 +30,7 @@ $NIV =$_POST['NIV'];
     print ("NIV: " .$NIV);
     print("<br>"); */
     
-    $SQL ="INSERT INTO Tarjetas VALUES('$Folio','$Vigencia','$FechaExp','$OficinaExp','$Movimiento','$rfcPropietario','$NIV')";
+    $SQL ="INSERT INTO Tarjetas VALUES('$Folio','$rfcPropietario','$Vigencia','$FechaExp','$OficinaExp','$Movimiento','$NIV','$PropietarioID','$VehiculoID')";
     /*($SQL)*/;
 
 

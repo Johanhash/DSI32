@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9; /* Gris claro para el fondo */
+    color: #333; /* Gris oscuro para el texto */
+}
+
+form {
+    background-color: #ffffff; /* Blanco para el fondo del formulario */
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    border: 1px solid #d9d9d9; /* Gris suave para los bordes */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2a2a2a; /* Gris oscuro */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Gris claro */
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form input[type="radio"] {
+    margin-right: 8px;
+}
+
+form input[type="submit"] {
+    background-color: #003366; /* Azul marino */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #00509e; /* Azul más claro para hover */
+}
+
+form select {
+    background-color: #ffffff; /* Blanco para el fondo */
+    color: #333; /* Gris oscuro */
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #00509e; /* Azul claro */
+    box-shadow: 0 0 5px rgba(0, 80, 158, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #003366; /* Azul marino */
+    margin-top: 20px;
+}

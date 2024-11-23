@@ -8,7 +8,7 @@ session_start();
 <head>
   <title>Navbar con Menú Deslizable</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/style_menu.css">
+  <link rel="stylesheet" href="CSS/style_menu1.css">
   <script src = "menu.js"></script>
 </head>
 <body>
@@ -16,15 +16,28 @@ session_start();
 <nav class="navbar"> 
   <div class="navbar-container">
     <ul class="menu">
+
+    <li class="dropdown">
+        <a href="#">Propietarios</a> 
+        <ul class="submenu">
+          <li><a href="FPropietarios.html">Crear</a></li>
+          <li><a href="CPropietarios.php">Leer</a></li>
+          <li><a href="FUPropietarios.php">Actualizar</a></li>
+          <li><a href="FDPropietarios.html">Eliminar</a></li>
+        </ul>
+      </li>
+
       <li class="dropdown">
         <a href="#">Conductores</a> 
         <ul class="submenu">
-          <li><a href="FConductores.html">Crear</a></li>
+          <li><a href="FConductores.php">Crear</a></li>
           <li><a href="CConductores.php">Leer</a></li>
           <li><a href="FUConductores.php">Actualizar</a></li>
           <li><a href="FDConductores.html">Eliminar</a></li>
         </ul>
       </li>
+  
+
       <li class="dropdown">
         <a href="#">Licencias</a> 
         <ul class="submenu">
@@ -34,42 +47,7 @@ session_start();
           <li><a href="FDLicencias.html">Eliminar</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">Multas</a> 
-        <ul class="submenu">
-          <li><a href="FMultas.html">Crear</a></li>
-          <li><a href="CMultas.php">Leer</a></li>
-          <li><a href="FUMultas.php">Actualizar</a></li>
-          <li><a href="FDMultas.html">Eliminar</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Propietarios</a> 
-        <ul class="submenu">
-          <li><a href="FPropietarios.html">Crear</a></li>
-          <li><a href="CPropietarios.php">Leer</a></li>
-          <li><a href="FUPropietarios.php">Actualizar</a></li>
-          <li><a href="FDPropietarios.html">Eliminar</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Tarjeta de Circulación</a> 
-        <ul class="submenu">
-          <li><a href="FTarjetas.html">Crear</a></li>
-          <li><a href="CTarjetas.php">Leer</a></li>
-          <li><a href="FUTarjetas.php">Actualizar</a></li>
-          <li><a href="FDTarjetas.html">Eliminar</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Tenencias</a> 
-        <ul class="submenu">
-          <li><a href="FTenencias.html">Crear</a></li>
-          <li><a href="CTenencias.php">Leer</a></li>
-          <li><a href="FUTenencias.php">Actualizar</a></li>
-          <li><a href="FDTenencias.html">Eliminar</a></li>
-        </ul>
-      </li>
+
       <li class="dropdown">
         <a href="#">Vehiculos</a> 
         <ul class="submenu">
@@ -79,6 +57,29 @@ session_start();
           <li><a href="FDVehiculos.html">Eliminar</a></li>
         </ul>
       </li>
+  
+      <li class="dropdown">
+        <a href="#">Tarjeta de Circulación</a> 
+        <ul class="submenu">
+          <li><a href="FTarjetas.html">Crear</a></li>
+          <li><a href="CTarjetas.php">Leer</a></li>
+          <li><a href="FUTarjetas.php">Actualizar</a></li>
+          <li><a href="FDTarjetas.html">Eliminar</a></li>
+        </ul>
+      </li>
+      
+   
+    
+      <li class="dropdown">
+        <a href="#">Tenencias</a> 
+        <ul class="submenu">
+          <li><a href="FTenencias.html">Crear</a></li>
+          <li><a href="CTenencias.php">Leer</a></li>
+          <li><a href="FUTenencias.php">Actualizar</a></li>
+          <li><a href="FDTenencias.html">Eliminar</a></li>
+        </ul>
+      </li>
+     
       <li class="dropdown">
         <a href="#">Verificaciones</a> 
         <ul class="submenu">
@@ -97,9 +98,27 @@ session_start();
           <li><a href="FDCentrosVerificacion.html">Eliminar</a></li>
         </ul>
       </li>
+
+      <li class="dropdown">
+        <a href="#">Multas</a> 
+        <ul class="submenu">
+          <li><a href="FMultas.html">Crear</a></li>
+          <li><a href="CMultas.php">Leer</a></li>
+          <li><a href="FUMultas.php">Actualizar</a></li>
+          <li><a href="FDMultas.html">Eliminar</a></li>
+        </ul>
+      </li>
     </ul>
-  </div>
-</nav>
+     <div class="session-controls">
+        <button class="btn-logout" 
+        onclick="location.href='FAcceso.html'"><img src="Cerrarse.png" 
+        alt="cerrarsesion" class="cerrar-icon"></button>
+      </div>
+    </div>
+  </nav>
+  <main class="main-content">
+    <img src="LogoV.png" alt="Vehículo" class="background-image">
+  </main>
 
 </body>
 </html>

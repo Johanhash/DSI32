@@ -7,6 +7,7 @@ $ResultSet=Ejecutar($Con,$SQL);
 $Fila=mysqli_fetch_row($ResultSet);
 Desconectar($Con);
 ?>
+
 <html5>
     <form  method="get"  action="UConductores.php"> 
         <label>Conductor ID</label>
@@ -17,21 +18,25 @@ Desconectar($Con);
             <input type="text" name="Nombre" id="Nombre"
             value="<?php print($Fila[1]);?>">
     <br>
+    <label>Apellido</label>
+            <input type="text" name="Apellido" id="Apellido"
+            value="<?php print($Fila[2]);?>">
+    <br>
     <label>Fecha_nacimiento</label>
         <input type="date" name="FechaNac" id="FechaNac"
-        value="<?php print($Fila[2]);?>">    
+        value="<?php print($Fila[3]);?>">    
     <br>
     <label>Domicilio</label>
         <input type="text" name="Domicilio" id="Domicilio"
-        value="<?php print($Fila[3]);?>">
+        value="<?php print($Fila[4]);?>">
     <br>
     <label>Telefono</label>
         <input type="number" name="Telefono" id="Telefono"
-        value="<?php print($Fila[4]);?>">
+        value="<?php print($Fila[5]);?>">
     <br>
     <label>Grupo Sanguineo</label>
     <select name="TipoSangre" id="TipoSangre"
-    value="<?php print($Fila[5]);?>"> 
+    value="<?php print($Fila[6]);?>"> 
         <option value="A+">A+</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -43,8 +48,8 @@ Desconectar($Con);
         </select>
     <br>
     <label>Donador</label>
-    <input type="radio" name="DonadorOrg" id="DonadorOrg" value="Si" value="<?php print($Fila[6]);?>">SI
-    <input type="radio" name="DonadorOrg" id="DonadorOrg" value="No" value="<?php print($Fila[6]);?>">NO
+    <input type="radio" name="DonadorOrg" id="DonadorOrg" value="Si" value="<?php print($Fila[7]);?>">SI
+    <input type="radio" name="DonadorOrg" id="DonadorOrg" value="No" value="<?php print($Fila[7]);?>">NO
     <br>   
     <input type="submit"> 
     </form>
