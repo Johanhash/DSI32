@@ -6,7 +6,6 @@
  $HoraEntrada =$_GET['HoraEntrada'];
  $HoraSalida =$_GET['HoraSalida'];
 
-
     $SQL ="INSERT INTO CentrosVerificacion (NoCentro,NoLinea,Tecnico,FechaExp,HoraEntrada,HoraSalida)
     VALUES('$No_Centro','$No_Linea','$Tecnico','$FechaExp','$HoraEntrada','$HoraSalida')";
 

@@ -1,27 +1,20 @@
-<?php
-session_start();
-  // Verificar si el usuario es administrador
-  if(isset($_SESSION['user_id']) && $_SESSION['user_type'] == 'admin') { 
-?>
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Navbar con Menú Deslizable</title>
+  <title>Formulario</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/style_menu1.css">
+  <link rel="stylesheet" href="CSS/style_crear1.css">
   <script src = "menu.js"></script>
 </head>
 <body>
-
-<nav class="navbar"> 
-  <div class="navbar-container">
-  <div class="logo-container">
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
                 <img src="LogoV.png" alt="Logo" class="logo">
             </div>
-            
-    <ul class="menu">
-
-    <li class="dropdown">
+            <ul class="menu">
+            <li class="dropdown">
         <a href="#">Propietarios</a> 
         <ul class="submenu">
           <li><a href="FPropietarios.php">Crear</a></li>
@@ -70,8 +63,6 @@ session_start();
           <li><a href="FDTarjetas.html">Eliminar</a></li>
         </ul>
       </li>
-      
-   
     
       <li class="dropdown">
         <a href="#">Tenencias</a> 
@@ -110,25 +101,79 @@ session_start();
           <li><a href="FUMultas.php">Actualizar</a></li>
           <li><a href="FDMultas.html">Eliminar</a></li>
         </ul>
-      </li>
-    </ul>
-     <div class="session-controls">
+    </li>
+            <div class="session-controls">
         <button class="btn-logout" 
         onclick="location.href='FAcceso.html'"><img src="Cerrarse.png" 
         alt="cerrarsesion" class="cerrar-icon"></button>
       </div>
     </div>
   </nav>
-  <main class="main-content">
-    <img src="LogoV.png" alt="Vehículo" class="background-image">
-  </main>
+    
+
+<!--Mensaje confirmacion-->
+    <?php
+    if (isset($_GET['mensaje'])) {
+        echo "<div style='background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;'>
+                " . htmlspecialchars($_GET['mensaje']) . "
+              </div>";
+    }
+    ?>
+
+    <h1>Multas</h1>
+    <h2>Registro</h2>
+    <form  method="post"   action="IMultas.php"> 
+        <label>Folio Multas</label>
+       <input type="text" name="Folio" id="Folio">
+       <br>
+       <label>Fecha</label>
+           <input type="date" name="Fecha" id="Fecha">    
+           <br>
+       <label>Lugar</label>
+           <input type="text" name="Lugar" id="Lugar">
+       <br>
+       <label>Propietario</label>
+               <input type="text" name="Propietario" id="Propietario">
+               <br>
+       <label>Nombre</label>
+           <input type="text" name="Nombre" id="Nombre">
+           <br>
+       <label>Domicilio</label>
+           <input type="text" name="Domicilio" id="Domicilio">
+       <br>
+       <label>Vehiculo</label>
+           <input type="text" name="Vehiculo" id="Vehiculo">
+           <br> 
+       <label>Motivo</label>
+               <input type="text" name="Motivo" id="Motivo">
+               <br>
+       <label>Objeto_Retenido</label>
+           <input type="text" name="ObjRetenido" id="ObjRetenido">
+           <br>
+       <label>Solucion</label>
+           <input type="text" name="Solucion" id="Solucion">
+       <br>
+       <label>Oficial       </label>
+           <input type="text" name="Oficial" id="Oficial">
+           <br>
+       <label>Lugar de pago</label>
+           <input type="text" name="LugarPago" id="LugarPago">
+           <br>
+       <label>Folio de verificacion</label>
+       <input type="text" name="FolioVerifcacion" id="FolioVerifcacion">
+       <br>
+       <label>Numero de Licencia</label>
+       <input type="number" name="NoLicencia" id="NoLicencia">
+       <br>
+       <label>Folio de FolioTarjeta</label>
+       <input type="number" name="FolioTarjeta" id="FolioTarjeta">
+       <br>
+           <input type="submit">
+       </form>
+    <div class="back-button-container">
+        <!-- Aquí colocarás la funcionalidad del botón de regresar -->
+        <button class="btn-back" onclick="location.href='Menu.php'">Regresar</button>
+    </div>
+    
 </body>
 </html>
-
-<?php
-  } else {
-    // Redirigir al usuario si no es administrador
-    header("Location: FAcceso.html"); // Aquí se cambió a FAcceso.html
-    exit();
-  }
-?>

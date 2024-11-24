@@ -86,7 +86,10 @@ body {
   transform: translateY(0);
 }
 
-
+.logo {
+  width: 100px;
+  max-height: 50px;
+}
 /* Botón de cerrar sesión */
 .session-controls {
   display: flex;
