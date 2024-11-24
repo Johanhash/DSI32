@@ -1,9 +1,16 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'U') {
+    header("Location: FAcceso.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Navbar con Menú Deslizable</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/style_menu.css">
+  <link rel="stylesheet" href="CSS/style_menu1.css">
   <script src = "menu.js"></script>
 </head>
 <body>
@@ -66,8 +73,15 @@
         </ul>
       </li>
     </ul>
+    <div class="session-controls">
+        <button class="btn-logout" 
+        onclick="location.href='FAcceso.html'"><img src="Cerrarse.png" 
+        alt="cerrarsesion" class="cerrar-icon"></button>
+      </div>
   </div>
 </nav>
-
+  <main class="main-content">
+    <img src="LogoV.png" alt="Vehículo" class="background-image">
+  </main>
 </body>
 </html>
