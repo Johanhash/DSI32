@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'A') {
-    header("Location: FAcceso.html");
-    exit();
-}
-?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -126,10 +120,4 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'A') {
   </main>
 </body>
 </html>
-<?php
-  else {
-    // Redirigir al usuario si no es administrador
-    header("Location: FAcceso.html");
-    exit();
-  }
-?>
+

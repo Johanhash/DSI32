@@ -24,7 +24,7 @@
             unset($_SESSION['error']); 
         }
         ?>
-        <form method="post" action="Accesso.php" enctype="multipart/form-data">
+        <form method="post" action="Acceso.php" enctype="multipart/form-data">
         <div class="form-group">
                 <label for="UserName">Nombre de Usuario</label>
                 <input type="text" name="UserName" id="UserName" placeholder="Escribe tu usuario" required>

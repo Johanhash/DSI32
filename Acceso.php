@@ -1,58 +1,69 @@
-<?php 
+<?php
 session_start();
-include("controlador.php");
+include("Controlador.php");
 
 $llave = $_FILES['llave']['name'];
 $tipo_archivo = $_FILES['llave']['type'];
 $tamano_archivo = $_FILES['llave']['size'];
 $carpeta_destino = "./";
 
-$UserName=$_POST['UserName'];
-$Pwd=$_POST['Pwd'];
+$UserName = $_POST["UserName"];
+$Pwd = $_POST["Pdw"];
 
-$Con = Conectar();
-$SQL = "SELECT * FROM Cuentas WHERE UserName='$UserName' AND Pwd='$Pwd' AND Llave_Key='$Key' AND Status=1;";
+$Con = conectar();
+$SQL = "SELECT * FROM cuentas WHERE UserName = '$UserName';";
 
-$ResultSet = Ejecutar($Con, $SQL);
+$ResultSet = ejecutar($Con, $SQL);
 $NFila = mysqli_num_rows($ResultSet);
 
-if ($NFila == 1) {
-    $DatosCuenta = mysqli_fetch_row($ResultSet);
-    $Intentos = $DatosCuenta[5];
-    $maxIntentos = 3;
-
-    if ($Pwd == $DatosCuenta[1]) {
-        if ($DatosCuenta[3] == 1) {
-            if ($DatosCuenta[4] == 0) {
-                $_SESSION['user_type'] = $DatosCuenta[2];
-                $_SESSION['user_id'] = $DatosCuenta[0];
-                if ($DatosCuenta[2] == 'A') {
-                    header("Location: Menu.php");
+// Comprueba características del archivo
+if ($tipo_archivo != "text/plain" || $tamano_archivo > 100000) {
+    $_SESSION['error'] = "La extensión o el tamaño de los archivos no es correcta.";
+    header("Location: FAccesso.php");
+    exit;
+} else {
+    $ruta_archivo = $carpeta_destino . $llave;
+    if (move_uploaded_file($_FILES['llave']['tmp_name'], $ruta_archivo)) {
+        if ($NFila == 1) {
+            $DatosCuenta = mysqli_fetch_row($ResultSet);
+            if ($Pwd == $DatosCuenta[1]) {
+                $Manejador = fopen("$llave", "r");
+                $token = fgets($Manejador);
+                fclose($Manejador);
+                if ($token == $DatosCuenta[6]) {
+                    if ($DatosCuenta[3] == 1) { 
+                        if ($DatosCuenta[4] == 0) { 
+                            unlink($ruta_archivo);
+                            $_SESSION['UserName'] = $UserName;
+                            $redirect = $DatosCuenta[2] == 'A' ? "Menu.php" : "MenuUsuarios.php";
+                            header("Location: $redirect");
+                            exit;
+                        } else {
+                            $_SESSION['error'] = "Cuenta bloqueada.";
+                        }
+                    } else {
+                        $_SESSION['error'] = "Usuario, contraseña o llave incorrectos.";
+                    }
                 } else {
-                    header("Location: MenuUsuarios.php");
+                    $_SESSION['error'] = "Usuario, contraseña o llave incorrectos.";
                 }
-                exit();
             } else {
-                print("Cuenta bloqueada");
+                $_SESSION['error'] = "Usuario, contraseña o llave incorrectos.";
+                $INTENTOS = "UPDATE Cuentas SET intentos = intentos + 1 WHERE UserName='$UserName';";
+                ejecutar($Con, $INTENTOS);
+                if ($DatosCuenta[5] > 1) {
+                    $BloquearCuenta = "UPDATE Cuentas SET Bloqueo=1 WHERE UserName='$UserName';";
+                    ejecutar($Con, $BloquearCuenta);
+                }
             }
         } else {
-            print("Usuario inactivo");
+            $_SESSION['error'] = "Usuario, contraseña o llave incorrectos.";
         }
     } else {
-        $Intentos++;
-        $updateSQL = "UPDATE Cuentas SET Intentos = $Intentos WHERE UserName = '$UserName'";
-        Ejecutar($Con, $updateSQL);
-        if ($Intentos >= $maxIntentos) {
-            $bloqueoSQL = "UPDATE Cuentas SET Bloqueo = 1 WHERE UserName = '$UserName'";
-            Ejecutar($Con, $bloqueoSQL);
-            print("Cuenta bloqueada");
-        } else {
-            print("Contraseña incorrecta. Le quedan " . ($maxIntentos - $Intentos) . " intentos");
-        }
+        $_SESSION['error'] = "Error al cargar el archivo.";
     }
-} else {
-    print("Usuario no encontrado");
+    header("Location: FAccesso.php");
+    exit;
 }
-
 Desconectar($Con);
 ?>
