@@ -3,6 +3,7 @@
     $Foto=$_REQUEST['Foto'];
     $Nombre=$_REQUEST['Nombre'];
     $Apellido=$_REQUEST['Apellido'];
+    $Firma=$_REQUEST['Firma'];
     $TipoLicencia=$_REQUEST['TipoLicencia'];
     $FechaExp=$_REQUEST['FechaExp']; 
     $Observacion=$_REQUEST['Observacion'];
@@ -14,7 +15,7 @@
     
 
     $SQL ="UPDATE Licencias SET Foto='$Foto',Nombre='$Nombre',Apellido='$Apellido',
-    TipoLicencia='$TipoLicencia',FechaExp='$FechaExp',
+    Firma='$Firma',TipoLicencia='$TipoLicencia',FechaExp='$FechaExp',
     Observacion='$Observacion',Antiguedad='$Antiguedad',
     Domicilio='$Domicilio',Restriccion='$Restriccion',
     Vigencia='$Vigencia',Conductorid='$Conductorid'

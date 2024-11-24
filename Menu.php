@@ -13,10 +13,10 @@ session_start();
 </head>
 <body>
 
-<nav class="navbar"> 
-  <div class="navbar-container">
-  <div class="logo-container">
-                <img src="LogoV.png" alt="Logo" class="logo">
+<nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
             </div>
             
     <ul class="menu">

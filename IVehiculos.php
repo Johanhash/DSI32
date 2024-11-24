@@ -1,5 +1,6 @@
 <?php
 
+$VehiculoID =$_REQUEST['VehiculoID'];
 $NIV =$_REQUEST['NIV'];
 $Marca =$_REQUEST['Marca'];
 $Linea =$_REQUEST['Linea'];
@@ -17,9 +18,9 @@ $Tipo =$_REQUEST['Tipo'];
 $Uso =$_REQUEST['Uso'];
 
 
-    $SQL ="INSERT INTO VEHICULOS VALUES('$NIV','$Marca','$Linea','$Sublinea','$Color','$Cilindro',
-    '$Origen','$Capacidad','$Puertas','$Asientos','$Combustible','$Transmision','$Clase','$Tipo','$Uso')";
-    /*print($SQL)*/;
+    $SQL ="INSERT INTO VEHICULOS VALUES('$VehiculoID','$NIV','$Marca','$Linea','$Sublinea','$Color','$Cilindro',
+    '$Origen','$Capacidad','$Puertas','$Asientos','$Combustible','$Transmision','$Clase','$Tipo','$Uso');";
+    /*print($SQL)*/
 
     //Enviar datos al controlador 
 include("Controlador.php"); 

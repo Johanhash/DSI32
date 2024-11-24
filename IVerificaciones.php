@@ -6,11 +6,11 @@ $Motivo=$_POST['Motivo'];
 $Semestre =$_POST['Semestre'];
 $Vigencia =$_POST['Vigencia'];
 $FolioTarjeta =$_POST['FolioTarjeta'];
-$CentroVer =$_POST['CentroVer'];
+$NoCentro =$_POST['NoCentro'];
 
 
-    $SQL ="INSERT INTO Verificaciones (Folio,Vehiculo,Motivo,Semestre,Vigencia,FolioTarjeta,CentroVer)
-    VALUES('$Folio','$Vehiculo','$Motivo','$Semestre','$Vigencia','$FolioTarjeta','$CentroVer')";
+    $SQL ="INSERT INTO Verificaciones (Folio,Vehiculo,Motivo,Semestre,Vigencia,FolioTarjeta,NoCentro)
+    VALUES('$Folio','$Vehiculo','$Motivo','$Semestre','$Vigencia','$FolioTarjeta','$NoCentro')";
     /*print($SQL)*/;
     
 //Enviar datos al controlador 

@@ -5,7 +5,7 @@ function Conectar(){
     $Server ="127.0.0.1";
     $Usuario ="root";
     $Pwd="";
-    $BD="Sistemacontrolvehicular";
+    $BD="sistemadecontrolvehicular";
 
     $Con=mysqli_connect($Server,$Usuario,$Pwd,$BD); 
     return $Con; 

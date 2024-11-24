@@ -8,7 +8,7 @@ $Municipio =$_REQUEST['Municipio'];
 
     $SQL ="UPDATE Propietarios SET Nombre='$Nombre',RFC='$RFC',
     Localidad='$Localidad', Municipio='$Municipio' 
-    WHERE RFC= '$PropietarioID' ";
+    WHERE PropietarioID= '$PropietarioID' ";
     /*print($SQL)*/
 
 

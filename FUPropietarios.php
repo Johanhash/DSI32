@@ -1,6 +1,6 @@
 <?php 
-$RFC=$_GET['RFC'];
-$SQL ="SELECT * FROM Propietarios WHERE RFC='$RFC'";
+$PropietarioID=$_GET['PropietarioID'];
+$SQL ="SELECT * FROM Propietarios WHERE PropietarioID='$PropietarioID';";
 include("Controlador.php"); 
 $Con=Conectar ();
 $ResultSet=Ejecutar($Con,$SQL);
@@ -11,11 +11,11 @@ Desconectar($Con);
 <html5>
     <form  method="GET" action="UPropietarios.php"> 
         
-    <label>Nombre</label>
-            <input type="text" name="PropietarioID" id="PropietarioID"
+    <label>ID Propietario</label>
+            <input type="number" name="PropietarioID" id="PropietarioID"
             value="<?php print($Fila[0]);?>">
     <br>
-    <label>RFC Propietario</label>
+    <label>RFC </label>
         <input type="text" name="RFC" id="RFC"
         value="<?php print($Fila[1]);?>">    
     <br>

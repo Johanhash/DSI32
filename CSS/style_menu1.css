@@ -90,6 +90,13 @@ body {
   width: 100px;
   max-height: 50px;
 }
+
+.inicio-icon{
+  width: 30px;
+  height: 30px;
+}
+
+
 /* Botón de cerrar sesión */
 .session-controls {
   display: flex;

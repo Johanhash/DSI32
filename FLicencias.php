@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <img src="LogoV.png" alt="Logo" class="logo">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
             </div>
             <ul class="menu">
             <li class="dropdown">
@@ -73,7 +73,15 @@
           <li><a href="FDTenencias.html">Eliminar</a></li>
         </ul>
       </li>
-     
+      <li class="dropdown">
+        <a href="#">Centros de Verificación</a> 
+        <ul class="submenu">
+          <li><a href="FCentrosVerificacion.php">Crear</a></li>
+          <li><a href="CCentrosVerificacion.php">Leer</a></li>
+          <li><a href="FUCentrosVerificacion.php">Actualizar</a></li>
+          <li><a href="FDCentrosVerificacion.html">Eliminar</a></li>
+        </ul>
+      </li>
       <li class="dropdown">
         <a href="#">Verificaciones</a> 
         <ul class="submenu">
@@ -83,15 +91,7 @@
           <li><a href="FDVerificaciones.html">Eliminar</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">Centros de Verificación</a> 
-        <ul class="submenu">
-          <li><a href="FCentrosVerficacion.php">Crear</a></li>
-          <li><a href="CCentrosVerificacion.php">Leer</a></li>
-          <li><a href="FUCentrosVerificacion.php">Actualizar</a></li>
-          <li><a href="FDCentrosVerificacion.html">Eliminar</a></li>
-        </ul>
-      </li>
+  
 
       <li class="dropdown">
         <a href="#">Multas</a> 
@@ -102,7 +102,6 @@
           <li><a href="FDMultas.html">Eliminar</a></li>
         </ul>
     </li>
-         
             <div class="session-controls">
         <button class="btn-logout" 
         onclick="location.href='FAcceso.html'"><img src="Cerrarse.png" 
@@ -124,7 +123,7 @@
     <h1>Licencias</h1>
     <h2>Registro</h2>
     <form  method="post"  action="ILicencias.php"> 
-        <label>No_Licencia</label>
+        <label>No. de licencia</label>
             <input type="number" name="NoLicencia" id="NoLicencia">    
         <br>
     
@@ -138,14 +137,17 @@
         <label>Apellido</label> 
                 <input type="text" name="Apellido" id="Apellido">
         <br>
-        <label>Tipo_Licencia</label>
+        <label>Firma </label>
+            <input type="file" name="Firma" id="Firma">    
+            <br>
+        <label>Tipo de licencia</label>
             <select name="TipoLicencia" id="TipoLicencia"> 
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
             </select>
             <br>
-        <label>Fecha_Expedicion</label>
+        <label>Fecha de expedición</label>
             <input type="date" name="FechaExp" id="FechaExp">
             <br>
         <label>Observacion</label>

@@ -3,6 +3,7 @@
     $Foto=$_REQUEST['Foto'];
     $Nombre=$_REQUEST['Nombre'];
     $Apellido=$_REQUEST['Apellido'];
+    $Firma=$_REQUEST['Firma'];
     $TipoLicencia=$_REQUEST['TipoLicencia'];
     $FechaExp=$_REQUEST['FechaExp']; 
     $Observacion=$_REQUEST['Observacion'];
@@ -14,7 +15,7 @@
 
 
     $SQL ="INSERT INTO Licencias VALUES('$NoLicencia','$Foto','$Nombre','$Apellido',
-    '$TipoLicencia','$FechaExp','$Observacion',
+   '$Firma', '$TipoLicencia','$FechaExp','$Observacion',
     '$Antiguedad','$Domicilio',
     '$Restriccion','$Vigencia','$Conductor')";
     /*print($SQL)*/;

@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <img src="LogoV.png" alt="Logo" class="logo">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
             </div>
             <ul class="menu">
             <li class="dropdown">
@@ -73,16 +73,6 @@
           <li><a href="FDTenencias.html">Eliminar</a></li>
         </ul>
       </li>
-     
-      <li class="dropdown">
-        <a href="#">Verificaciones</a> 
-        <ul class="submenu">
-          <li><a href="FVerificaciones.php">Crear</a></li>
-          <li><a href="CVerificaciones.php">Leer</a></li>
-          <li><a href="FUVerificaciones.php">Actualizar</a></li>
-          <li><a href="FDVerificaciones.html">Eliminar</a></li>
-        </ul>
-      </li>
       <li class="dropdown">
         <a href="#">Centros de Verificación</a> 
         <ul class="submenu">
@@ -92,6 +82,16 @@
           <li><a href="FDCentrosVerificacion.html">Eliminar</a></li>
         </ul>
       </li>
+      <li class="dropdown">
+        <a href="#">Verificaciones</a> 
+        <ul class="submenu">
+          <li><a href="FVerificaciones.php">Crear</a></li>
+          <li><a href="CVerificaciones.php">Leer</a></li>
+          <li><a href="FUVerificaciones.php">Actualizar</a></li>
+          <li><a href="FDVerificaciones.html">Eliminar</a></li>
+        </ul>
+      </li>
+  
 
       <li class="dropdown">
         <a href="#">Multas</a> 

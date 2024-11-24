@@ -1,7 +1,7 @@
 <?php
     include("Controlador.php");
-    $RFC = $_GET['RFC'];
-    $SQL = "DELETE FROM Propietarios WHERE RFC='$RFC'";
+    $Propietarioid = $_GET['Propietarioid'];
+    $SQL = "DELETE FROM Propietarios WHERE Propietarioid='$Propietarioid';";
     $Con = Conectar();
     $ResultSet = Ejecutar($Con, $SQL);
     

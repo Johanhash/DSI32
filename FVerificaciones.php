@@ -142,7 +142,7 @@
         <input type="number" name="FolioTarjeta" id="FolioTarjeta">    
     <br>
     <label>Centro de verificación </label>
-        <input type="number" name="CentroVer" id="CentroVer">
+        <input type="number" name="NoCentro" id="NoCentro">
     <br>
     <input type="submit"> 
     </form>

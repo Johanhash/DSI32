@@ -7,6 +7,7 @@
         <input type="radio" Id="Atributo" Name="Atributo" value="Foto"> Foto <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="Nombre"> Nombre <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="Apellido"> Apellido <br>
+        <input type="radio" Id="Atributo" Name="Atributo" value="Firma"> Firma <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="Licencia"> Licencia <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="FechaExp"> Fecha_Exp <br>
         <input type="radio" Id="Atributo" Name="Atributo" value="Observacion"> Observación <br>
@@ -36,6 +37,8 @@
                 <th>No_Licencia</th>
                 <th>Foto</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Firma</th>
                 <th>Tipo_Licencia</th>
                 <th>Fecha_Exp</th>
                 <th>Observación</th>
