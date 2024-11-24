@@ -7,8 +7,8 @@ $tipo_archivo = $_FILES['llave']['type'];
 $tamano_archivo = $_FILES['llave']['size'];
 $carpeta_destino = "./";
 
-$UserName = $_POST["UserName"];
-$Pwd = $_POST["Pdw"];
+$UserName = $_POST['UserName'];
+$Pwd = $_POST['Pwd'];
 
 $Con = conectar();
 $SQL = "SELECT * FROM cuentas WHERE UserName = '$UserName';";
@@ -19,8 +19,9 @@ $NFila = mysqli_num_rows($ResultSet);
 // Comprueba características del archivo
 if ($tipo_archivo != "text/plain" || $tamano_archivo > 100000) {
     $_SESSION['error'] = "La extensión o el tamaño de los archivos no es correcta.";
-    header("Location: FAccesso.php");
+    header("Location: FAcceso.php");
     exit;
+    
 } else {
     $ruta_archivo = $carpeta_destino . $llave;
     if (move_uploaded_file($_FILES['llave']['tmp_name'], $ruta_archivo)) {
@@ -62,7 +63,7 @@ if ($tipo_archivo != "text/plain" || $tamano_archivo > 100000) {
     } else {
         $_SESSION['error'] = "Error al cargar el archivo.";
     }
-    header("Location: FAccesso.php");
+    header("Location: FAcceso.php");
     exit;
 }
 Desconectar($Con);
