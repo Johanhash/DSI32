@@ -1,7 +1,7 @@
 <?php
     include("Controlador.php");
-    $Propietarioid = $_GET['Propietarioid'];
-    $SQL = "DELETE FROM Propietarios WHERE Propietarioid='$Propietarioid';";
+    $PropietarioID = $_GET['PropietarioID'];
+    $SQL = "DELETE FROM Propietarios WHERE PropietarioID='$PropietarioID';";
     $Con = Conectar();
     $ResultSet = Ejecutar($Con, $SQL);
     

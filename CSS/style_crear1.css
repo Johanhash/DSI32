@@ -51,7 +51,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #00509e; /* Azul más claro para hover */
+    background-color: #074b8f; /* Azul más claro para hover */
 }
 
 form select {
@@ -80,6 +80,18 @@ h2 {
   margin-top: 20px;
   
 }
+
+.container {
+ margin-top: 50px;
+ max-width: 600px;
+  }
+.form-control {
+ margin-bottom: 15px;
+ }
+.btn-primary {
+ width: 100%;
+ }
+      
 /* Barra de navegación */
 .navbar {
     background-color: #004B76; /* Azul oscuro */
@@ -119,7 +131,7 @@ h2 {
   }
   
   .menu a:hover {
-    color: #1abc9c; /* Verde agua */
+    color: #00293b; /* Verde agua */
   }
   
   /* Estilos del submenú */
@@ -166,6 +178,11 @@ h2 {
     max-height: 50px;
 }
 
+.inicio-icon {
+
+  width: 30px;
+  max-height: 30px;
+}
 
 /* Botón de cerrar sesión */
 .session-controls {
@@ -212,3 +229,113 @@ h2 {
     background-color: #003366; /* Azul más oscuro */
 }
   
+  /* leer */
+  body {
+    background-color: #f8f9fa;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  th {
+    background-color: #0676a2;
+    color: white;
+    text-align: center;
+  }
+  td, th {
+    padding: 10px;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #e2e6ea;
+  }
+  .btn-back {
+    background-color:#c82333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-back:hover {
+    background-color:  #930412;
+  }
+  .btn-update {
+    background-color:#02801f ;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-update:hover {
+    background-color:  #016819;
+  }
+  .form-label {
+    font-weight: bold;
+  }
+
+
+  /* Contenido principal */
+.main-content {
+  position: relative;
+  text-align: center;
+  margin: 20px;
+}
+
+.background-image {
+  max-width: 100%;
+  opacity: 0.1; /* Imagen de fondo semitransparente */
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 600px;
+}
+
+ 
+/*ELIMINAR*/
+.btn-danger, .btn-secondary {
+  width: 48%;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Fondo del formulario */
+
+#confirmationBox {
+  display: none; /* Oculto por defecto */
+  margin-top: 50px;
+}
+
+  .btn-danger {
+  background-color: #c82333;
+}
+
+.btn-danger:hover {
+  background-color: #930412;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}

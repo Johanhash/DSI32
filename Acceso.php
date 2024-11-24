@@ -1,6 +1,12 @@
 <?php 
 session_start();
 include("controlador.php");
+
+$llave = $_FILES['llave']['name'];
+$tipo_archivo = $_FILES['llave']['type'];
+$tamano_archivo = $_FILES['llave']['size'];
+$carpeta_destino = "./";
+
 $UserName=$_POST['UserName'];
 $Pwd=$_POST['Pwd'];
 
