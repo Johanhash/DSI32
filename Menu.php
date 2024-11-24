@@ -1,7 +1,9 @@
 <?php
 session_start();
-  // Verificar si el usuario es administrador
-  if(isset($_SESSION['user_id']) && $_SESSION['user_type'] == 'admin') { 
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'A') {
+    header("Location: FAcceso.html");
+    exit();
+}
 ?>
 <!DOCTYPE html> 
 <html>
@@ -124,9 +126,8 @@ session_start();
   </main>
 </body>
 </html>
-
 <?php
-  } else {
+  else {
     // Redirigir al usuario si no es administrador
     header("Location: FAcceso.html");
     exit();
