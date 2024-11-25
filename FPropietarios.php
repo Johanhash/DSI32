@@ -122,6 +122,9 @@
         <label>ID Propietario</label>
         <input type="number" name="PropietarioID" id="PropietarioID">    
     <br>
+    <label>RFC</label>
+        <input type="text" name="RFC" id="RFC">    
+    <br>
     <label>Nombre</label>
             <input type="text" name="Nombre" id="Nombre">
     <br>
