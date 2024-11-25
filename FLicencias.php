@@ -25,6 +25,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
             </div>
             
     <ul class="menu">
+      
 
     <li class="dropdown">
         <a href="#">Propietarios</a> 

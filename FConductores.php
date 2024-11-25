@@ -33,6 +33,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
           <li><a href="CPropietarios.php">Leer</a></li>
           
         </ul>
+        
       </li>
 
       <li class="dropdown">

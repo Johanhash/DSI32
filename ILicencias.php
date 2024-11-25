@@ -236,3 +236,4 @@ if (isset($_FILES['Foto']) && isset($_FILES['Firma'])) {
 header("Location: FLicencias.php");
 exit();
 ?>
+
