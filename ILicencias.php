@@ -39,5 +39,6 @@
     } else {
         echo "Hubo un error al subir los archivos.";
     }
-}
+
 ?>
+

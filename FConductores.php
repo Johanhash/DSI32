@@ -23,6 +23,7 @@
           <li><a href="CPropietarios.php">Leer</a></li>
           
         </ul>
+        
       </li>
 
       <li class="dropdown">

@@ -20,16 +20,20 @@ $Uso =$_REQUEST['Uso'];
 
     $SQL ="INSERT INTO VEHICULOS VALUES('$VehiculoID','$NIV','$Marca','$Linea','$Sublinea','$Color','$Cilindro',
     '$Origen','$Capacidad','$Puertas','$Asientos','$Combustible','$Transmision','$Clase','$Tipo','$Uso');";
-    /*print($SQL)*/
 
-    //Enviar datos al controlador 
+// Enviar datos al controlador
 include("Controlador.php"); 
-$Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
+$Con = Conectar();
+$ResultSet = Ejecutar($Con, $SQL);
+
+if ($ResultSet == 1) {
+    // Redirigir a la misma página con un mensaje de éxito
+    header("Location: FVehiculos.php?mensaje=Registro+exitoso");
+    exit();
+} else {
+    // Redirigir a la misma página con un mensaje de error
+    header("Location: FVehiculos.php?mensaje=Error+en+el+registro");
+    exit();
 }
 Desconectar($Con); 
 
