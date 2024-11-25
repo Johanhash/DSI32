@@ -56,7 +56,7 @@ Desconectar($Con);
 
 <form  method="get"  action="UConductores.php"> 
         <label>Conductor ID</label>
-        <input type="number" name="ConductorID" id="ConductorID"
+        <input type="number" name="Conductorid" id="Conductorid"
         value="<?php print($Fila[0]);?>">    
     <br>
     <label>Nombre</label>
