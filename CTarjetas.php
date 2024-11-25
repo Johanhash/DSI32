@@ -90,6 +90,11 @@
                     <input type="radio" Id="Atributo" Name="Atributo" value="VehiculoID"> ID Vehiculo <br>
                     </label>
                 </div>
+                <div>
+                    <label for="Placa">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="Placa"> Placa <br>
+                    </label>
+                </div>
             </div>
 
             <input type="submit" value="Buscar" class="btn btn-primary">
@@ -119,6 +124,7 @@
                 <th>NIV</th>
                 <th>ID Propietario</th>
                 <th>ID Vehiculo</th>
+                <th>Placa</th>
                 <th>Eliminar</th>
                 <th>Actualizar</th>
                </tr>

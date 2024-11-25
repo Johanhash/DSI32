@@ -40,11 +40,6 @@
                 </div>
                 <div>
                     <label>
-                        <input type="radio" name="Atributo" value="rfc"> RFC
-                    </label>
-                </div>
-                <div>
-                    <label>
                         <input type="radio" name="Atributo" value="nombre"> Nombre
                     </label>
                 </div>
@@ -80,7 +75,6 @@
                 echo "<thead>
                         <tr>
                             <th>ID Propietario</th>
-                            <th>RFC</th>
                             <th>Nombre</th>
                             <th>Localidad</th>
                             <th>Municipio</th>

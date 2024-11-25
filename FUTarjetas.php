@@ -92,6 +92,10 @@ Desconectar($Con);
     <input type="text" name="VehiculoID" id="VehiculoID"
     value="<?php print($Fila[8]);?>">
 <br>
+<label>Placa</label>
+    <input type="text" name="Placa" id="Placa"
+    value="<?php print($Fila[9]);?>">
+    <br>
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
     </div>

@@ -59,22 +59,17 @@ Desconectar($Con);
         <input type="text" name="PropietarioID" id="PropietarioID"
         value="<?php print($Fila[0]);?>">    
     <br>
-    
-    <label>RFC</label>
-            <input type="text" name="RFC" id="RFC"
-            value="<?php print($Fila[1]);?>">
-    <br>
     <label>Nombre</label>
             <input type="text" name="Nombre" id="Nombre"
-            value="<?php print($Fila[2]);?>">
+            value="<?php print($Fila[1]);?>">
     <br>
     <label>Localidad</label>
         <input type="text" name="Localidad" id="Localidad"
-        value="<?php print($Fila[3]);?>">    
+        value="<?php print($Fila[2]);?>">    
     <br>
     <label>Municipio</label>
         <input type="text" name="Municipio" id="Municipio"
-        value="<?php print($Fila[4]);?>">
+        value="<?php print($Fila[3]);?>">
     <br>
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>

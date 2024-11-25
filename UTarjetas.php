@@ -10,12 +10,13 @@ $rfcPropietario =$_POST['rfcPropietario'];
 $NIV =$_POST['NIV'];
 $PropietarioID =$_POST['PropietarioID'];
 $VehiculoID =$_POST['VehiculoID'];
+$Placa =$_POST['Placa'];
 
 
     $SQL ="UPDATE Tarjetas
     SET  rfcPropietario='$rfcPropietario', Vigencia='$Vigencia',FechaExp='$FechaExp',
     OficinaExp='$OficinaExp',Movimiento='$Movimiento',
-    NIV='$NIV',PropietarioID='$PropietarioID',VehiculoID='$VehiculoID' 
+    NIV='$NIV',PropietarioID='$PropietarioID',VehiculoID='$VehiculoID',Placa='$Placa' 
     WHERE Folio='$Folio';"; 
     
 
