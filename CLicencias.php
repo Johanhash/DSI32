@@ -60,7 +60,13 @@ $ResultSet = Ejecutar($Con, $SQL);
             </div>
         </div>
     </nav>
-
+    <?php
+    if (isset($_GET['mensaje'])) {
+        echo "<div style='background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;'>
+                " . htmlspecialchars($_GET['mensaje']) . "
+              </div>";
+    }
+    ?>
     <div class="container table-container">
         <h1 class="text-center">Consulta de Licencias</h1>
         <table class="table table-bordered">

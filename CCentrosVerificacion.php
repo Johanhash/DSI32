@@ -43,6 +43,15 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     </nav>
 
     
+ 
+    <?php
+    if (isset($_GET['mensaje'])) {
+        echo "<div style='background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;'>
+                " . htmlspecialchars($_GET['mensaje']) . "
+              </div>";
+    }
+    ?>
+    
     <!-- Contenido principal -->
     <main class="main-content">
         <h1 class="text-center">Consulta de Centros de Verificacion</h1>

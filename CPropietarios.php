@@ -19,6 +19,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 </head>
 <body>
     
+
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -42,6 +43,14 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
         </div>
     </nav>
 
+ 
+    <?php
+    if (isset($_GET['mensaje'])) {
+        echo "<div style='background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;'>
+                " . htmlspecialchars($_GET['mensaje']) . "
+              </div>";
+    }
+    ?>
     
     <!-- Contenido principal -->
     <main class="main-content">
@@ -51,6 +60,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
                 <label for="Criterio" class="form-label">Criterio de búsqueda</label>
                 <input type="text" id="Criterio" name="Criterio" class="form-control" placeholder="Ingrese su criterio">
             </div>
+   
 
             <div class="form-group">
                 <label class="form-label">Atributo </label>
@@ -59,7 +69,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
                         <input type="radio" id="PropietarioID" name="Atributo" value="PropietarioID" > ID Propietario
                     </label>
                 </div>
-                <div>
+                 <div>
                     <label for="nombre">
                         <input type="radio" id="nombre" name="Atributo" value="nombre"> Nombre
                     </label>
@@ -124,4 +134,5 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     </main>
 </body>
 </html>
+
 

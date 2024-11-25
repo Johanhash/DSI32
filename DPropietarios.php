@@ -8,18 +8,26 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     exit;
 }
 ?>
-<?php
-    include("Controlador.php");
-    $PropietarioID = $_GET['PropietarioID'];
-    $SQL = "DELETE FROM Propietarios WHERE PropietarioID='$PropietarioID';";
-    $Con = Conectar();
-    $ResultSet = Ejecutar($Con, $SQL);
-    
-    if (mysqli_affected_rows($Con) == 1) {
-        print("1 Registro Propietario Eliminado");
-    } else {
-        print(mysqli_error($Con));
-    }
 
-    Desconectar($Con);
+<?php 
+include("Controlador.php");
+
+$PropietarioID = $_GET['PropietarioID'];
+$SQL = "DELETE FROM Propietarios WHERE PropietarioID='$PropietarioID'";
+
+$Con = Conectar();
+$ResultSet = Ejecutar($Con, $SQL);
+
+if (mysqli_affected_rows($Con) == 1) {
+    // Redirigir con mensaje de éxito
+    header("Location: CPropietarios.php?mensaje=Registro+eliminado+correctamente");
+    exit();
+} else {
+    // Redirigir con mensaje de error
+    $error = urlencode(mysqli_error($Con));
+    header("Location: CPropietarios.php?mensaje=Error:+$error");
+    exit();
+}
+
+Desconectar($Con);
 ?>
