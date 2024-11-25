@@ -1,32 +1,37 @@
 <?php
-
+ 
 $Folio =$_POST['Folio'];
 $Vehiculo =$_POST['Vehiculo'];
 $Motivo=$_POST['Motivo'];
 $Semestre =$_POST['Semestre'];
 $Vigencia =$_POST['Vigencia'];
 $FolioTarjeta =$_POST['FolioTarjeta'];
-$CentroVer =$_POST['CentroVer'];
+$NoCentro=$_POST['NoCentro'];
 
 
     $SQL ="UPDATE Verificaciones 
     SET Vehiculo='$Vehiculo',
     Motivo='$Motivo',Semestre='$Semestre',
     Vigencia='$Vigencia',FolioTarjeta='$FolioTarjeta',
-    CentroVer='$CentroVer' WHERE Folio='$Folio'";
-    /*print($SQL)*/;
+    NoCentro='$NoCentro' WHERE Folio='$Folio'";
     
-//Enviar datos al controlador 
-include("Controlador.php"); 
-$Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
-}
-Desconectar($Con); 
 
+include("controlador.php");
+
+$Con=Conectar();
+$ResultSet=Ejecutar($Con, $SQL);
+
+if ($ResultSet == 1) {
+    // Redirigir al formulario de actualización con un mensaje de éxito
+    header("Location: FUVerificaciones.php?NoCentro=$NoCentro&mensaje=exito");
+    exit();
+} else {
+    // Mostrar error si ocurre
+    echo "Error en la actualización: " . mysqli_error($Con);
+}
+
+procesar();
+desconectar($Con);
 ?>
 
 

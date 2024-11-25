@@ -8,8 +8,53 @@ $Fila=mysqli_fetch_row($ResultSet);
 Desconectar($Con);
 ?>
 
-<html5>
-    <form  method="post"   action="UMultas.php"> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Actualizar </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style_crear1.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
+            </div>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">Multas</a>
+                    <ul class="submenu">
+                        <li><a href="FMultas.php">Crear</a></li>
+                        <li><a href="CMultas.php">Leer</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="session-controls">
+                <button class="btn-logout" onclick="location.href='FAcceso.html'">
+                    <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1 class="text-center">Actualizar</h1>
+
+        <!-- Mostrar mensaje de éxito si existe -->
+        <?php
+
+        if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'exito') {
+            echo "<div class='alert alert-success text-center' role='alert'>
+                    ¡Actualización exitosa!
+                  </div>";
+        }
+        ?>
+
+<form  method="post"   action="UMultas.php"> 
         <label>Folio Multas</label>
        <input type="text" name="Folio" id="Folio" 
        value="<?php print($Fila[0]);?>">
@@ -70,6 +115,8 @@ Desconectar($Con);
        <input type="number" name="FolioTarjeta" id="FolioTarjeta"
        value="<?php print($Fila[14]);?>">
        <br>
-           <input type="submit">
-       </form>
-   </html5>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</body>
+</html>
