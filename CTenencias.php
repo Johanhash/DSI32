@@ -132,7 +132,7 @@
                     echo "<td>$Valor</td>";
                 }
                 echo "<td><a href='DTenencias.php?LineaCaptura={$Fila['LineaCaptura']}'><button class='btn-back'>Eliminar</button></a></td>";
-                echo "<td><a href='FTenencias.php?LineaCaptura={$Fila['LineaCaptura']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "<td><a href='FUTenencias.php?LineaCaptura={$Fila['LineaCaptura']}'><button class='btn-update'>Actualizar</button></a></td>";
                 echo "</tr>";
             }
             echo "</tbody>";

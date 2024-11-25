@@ -113,7 +113,7 @@
                     echo "<td>$Valor</td>";
                 }
                 echo "<td><a href='DCentrosVerificacion.php?NoCentro={$Fila['NoCentro']}'><button class='btn-back'>Eliminar</button></a></td>";
-                echo "<td><a href='FCentrosVerificacion.php?NoCentro={$Fila['NoCentro']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "<td><a href='FUCentrosVerificacion.php?NoCentro={$Fila['NoCentro']}'><button class='btn-update'>Actualizar</button></a></td>";
                 echo "</tr>";
             }
             echo "</tbody>";

@@ -131,7 +131,7 @@
                     echo "<td>$Valor</td>";
                 }
                 echo "<td><a href='DTarjetas.php?Folio={$Fila['Folio']}'><button class='btn-back'>Eliminar</button></a></td>";
-                echo "<td><a href='FTarjetas.php?Folio={$Fila['Folio']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "<td><a href='FUTarjetas.php?Folio={$Fila['Folio']}'><button class='btn-update'>Actualizar</button></a></td>";
                 echo "</tr>";
             }
 
