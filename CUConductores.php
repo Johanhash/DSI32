@@ -35,7 +35,7 @@
                 <label class="form-label">Atributo</label>
                 <div>
                     <label>
-                        <input type="radio" name="Atributo" value="ConductorID" required> ConductorID
+                        <input type="radio" name="Atributo" value="Conductor ID" required> ConductorID
                     </label>
                 </div>
                 <div>

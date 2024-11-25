@@ -88,21 +88,21 @@
                            <th>No Centro</th>
                            <th>No Linea</th>
                            <th>Tecnico</th>
-                           <th>Fecha de expedicion</th>
-                           <th>Hora de entrega</th>
-                           <th>Hora de salida</th>
+                           <th>Fecha Expediente</th>
+                           <th>Hora Entregado</th>
+                           <th>Hora Salida</th>
                         </tr>
                       </thead>
                       <tbody>";
 
                 while ($Row = mysqli_fetch_assoc($ResultSet)) {
                     echo "<tr>
-                            <td>" . htmlspecialchars($Row['NoCentro']) . "</td>
-                            <td>" . htmlspecialchars($Row['NoLinea']) . "</td>
+                            <td>" . htmlspecialchars($Row['No Centro']) . "</td>
+                            <td>" . htmlspecialchars($Row['No Linea']) . "</td>
                             <td>" . htmlspecialchars($Row['Tecnico']) . "</td>
-                            <td>" . htmlspecialchars($Row['FechaExp']) . "</td>
-                            <td>" . htmlspecialchars($Row['HoraEntrada']) . "</td>
-                            <td>" . htmlspecialchars($Row['HoraSalida']) . "</td>
+                            <td>" . htmlspecialchars($Row['Fecha Expediente']) . "</td>
+                            <td>" . htmlspecialchars($Row['Hora Entregado']) . "</td>
+                            <td>" . htmlspecialchars($Row['Hora Salida']) . "</td>
                           </tr>";
                 }
 
