@@ -1,67 +1,128 @@
-<html>
-    <form>
-        <label>Criterio</label>
-        <input type="text" Id="Criterio" Name="Criterio"><br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="noCentro" required> No Centro<br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="noLinea"> No Línea <br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="tecnico"> Técnico <br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="fechaExpediente"> Fecha Expediente <br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="horaEntregado"> Hora Entregado <br>
-        <input type="radio" Id="Atributo" Name="Atributo" value="horaSalida"> Hora Salida <br>
-        <input type="submit" value="Buscar">
-    </form>
-</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Formulario</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style_crear1.css">
+  <script src="menu.js"></script>
+  
+</head>
+<body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
+            </div>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">Centros de Verificacion</a>
+                    <ul class="submenu">
+                        <li><a href="FCentrosVerificacion.php">Crear</a></li>
+          
+                    </ul>
+                </li>
+            </ul>
+            <div class="session-controls">
+                <button class="btn-logout" onclick="location.href='FAcceso.php'">
+                    <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
+                </button>
+            </div>
+        </div>
+    </nav>
 
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <h1 class="text-center">Consulta de Centros de Verificacion</h1>
+        <form method="GET" action="CConductores.php" class="mb-4">
+            <div class="form-group">
+                <label for="Criterio" class="form-label">Criterio de búsqueda</label>
+                <input type="text" id="Criterio" name="Criterio" class="form-control" placeholder="Ingrese su criterio">
+            </div>
 
-<?php
-    if(isset($_GET['Criterio']))
-    {
-        $Criterio = $_GET['Criterio'];
-        $Atributo = $_GET['Atributo'];
+            <div class="form-group">
+                <label class="form-label">Atributo </label>
+                <div>
+                    <label for="NoCentro">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="NoCentro" required> No. de Centro<br>
+                    </label>
+                </div>
+                <div>
+                    <label for="NoLinea">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="NoLinea"> No. de Línea <br>
+                    </label>
+                </div>
+                <div>
+                    <label for="tecnico">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="tecnico"> Técnico <br>
+                    </label>
+                </div>
+                <div>
+                    <label for="fechaExp">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="fechaExp"> Fecha de expedición <br>
+                    </label>
+                </div>
+                <div>
+                    <label for="HoraE">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="HoraE"> Hora de entrega <br>
+                    </label>
+                </div>
+                <div>
+                    <label for="HoraS">
+                    <input type="radio" Id="Atributo" Name="Atributo" value="HoraS"> Hora de salida <br>
+                    </label>
+                </div>
+                                  
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary">
+        </form>
 
-        include ("Controlador.php");
+        <?php
+        if (isset($_GET['Criterio'])) {
+            $Criterio = $_GET['Criterio'];
+            $Atributo = $_GET['Atributo'];
 
-        $Con = Conectar();
-        $SQL = "SELECT * FROM CentrosVerificacion WHERE $Atributo LIKE '%$Criterio%'";
-        $ResultSet = Ejecutar($Con, $SQL);
+            include("Controlador.php");
 
-        print("<table border='1' cellpadding='10' cellspacing='0'>");
-        print("<tr>
-                <th>No Centro</th>
-                <th>No Línea</th>
+            $Con = Conectar();
+            $SQL = "SELECT * FROM CentrosVerificacion WHERE $Atributo LIKE '%$Criterio%'";
+            $ResultSet = Ejecutar($Con, $SQL);
+
+            echo "<div class='table-responsive'>";
+            echo "<table class='table table-bordered'>";
+            echo "<thead>
+           <tr>
+                <th>No. de Centro</th>
+                <th>No. de Línea</th>
                 <th>Técnico</th>
-                <th>Fecha Expediente</th>
-                <th>Hora Entregado</th>
-                <th>Hora Salida</th>
+                <th>Fecha de expedición</th>
+                <th>Hora de entrega</th>
+                <th>Hora de salida</th>
                 <th>Eliminar</th>
                 <th>Actualizar</th>
 
-               </tr>");
+               </tr>
+                  </thead>
+                  <tbody>";
 
-        $NFila = mysqli_num_rows($ResultSet);
-        $NColumnas = mysqli_field_count($Con);
+            while ($Fila = mysqli_fetch_assoc($ResultSet)) {
+                echo "<tr>";
+                foreach ($Fila as $Valor) {
+                    echo "<td>$Valor</td>";
+                }
+                echo "<td><a href='DCentrosVerificacion.php?NoCentro={$Fila['NoCentro']}'><button class='btn-back'>Eliminar</button></a></td>";
+                echo "<td><a href='FCentrosVerificacion.php?NoCentro={$Fila['NoCentro']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "</tr>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+            echo "</div>";
 
-        for ($i = 0; $i < $NFila; $i++) {
-            $Fila = mysqli_fetch_row($ResultSet);
-            print("<tr>");
-            for ($j = 0; $j < $NColumnas; $j++) {
-                print("<td>" . $Fila[$j] . "</td>");
-            } 
-
-            print "<td>";
-            print "<a href='DCentrosVerificacion.php?NoCentro=" . $Fila[0] . "'>
-            <input type='submit' value='Eliminar'></a>";
-            print "</td>";
-            print "</td>";
-        
-            print "<td>";
-            print "<a href='FUCentrosVerificacion.php?NoCenntro=" . $Fila[0] . "'>
-            <input type='submit' value='Actualizar'></a>";
-            print "</td>";
-    
+            Desconectar($Con);
         }
-
-        print "</table>";
-        Desconectar($Con);
-    }
-?>
+        ?>
+    </main>
+</body>
+</html>

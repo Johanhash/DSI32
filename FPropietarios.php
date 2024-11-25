@@ -107,12 +107,11 @@
         </ul>
       </li>
     </ul>
-         
-            <div class="session-controls">
-        <button class="btn-logout" 
-        onclick="location.href='FAcceso.html'"><img src="Cerrarse.png" 
-        alt="cerrarsesion" class="cerrar-icon"></button>
-      </div>
+    <div class="session-controls">
+                <button class="btn-logout" onclick="location.href='CerrarSesion.php'">
+                    <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
+                </button>
+    </div>
     </div>
   </nav>
     

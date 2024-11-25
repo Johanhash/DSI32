@@ -19,7 +19,6 @@ form {
 form label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
     color: #2a2a2a; /* Gris oscuro */
 }
 

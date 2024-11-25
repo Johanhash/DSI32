@@ -36,7 +36,7 @@
                 </li>
             </ul>
             <div class="session-controls">
-                <button class="btn-logout" onclick="location.href='FAcceso.html'">
+                <button class="btn-logout" onclick="location.href='CerrarSesion.php'">
                     <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
                 </button>
             </div>

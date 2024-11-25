@@ -8,6 +8,7 @@
   
 </head>
 <body>
+    
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -24,13 +25,14 @@
                 </li>
             </ul>
             <div class="session-controls">
-                <button class="btn-logout" onclick="location.href='FAcceso.html'">
+                <button class="btn-logout" onclick="location.href='FAcceso.php'">
                     <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
                 </button>
             </div>
         </div>
     </nav>
 
+    
     <!-- Contenido principal -->
     <main class="main-content">
         <h1 class="text-center">Consulta de Propietarios</h1>

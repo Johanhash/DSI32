@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html>
 <head>
+  
   <title>Navbar con Menú Deslizable</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="CSS/style_crear1.css">
@@ -11,15 +12,15 @@
 <nav class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='MenuUsuarios.php'">
             </div>
-            
+  
     <ul class="menu">
 
     <li class="dropdown">
         <a href="#">Propietarios</a> 
         <ul class="submenu">
-          <li><a href="CPropietarios.php">Leer</a></li>
+          <li><a href="CUPropietarios.php">Leer</a></li>
           
         </ul>
       </li>
@@ -27,7 +28,7 @@
       <li class="dropdown">
         <a href="#">Conductores</a> 
         <ul class="submenu">
-          <li><a href="CConductores.php">Leer</a></li>
+          <li><a href="CUConductores.php">Leer</a></li>
 
         </ul>
       </li>
@@ -35,7 +36,7 @@
       <li class="dropdown">
         <a href="#">Licencias</a> 
         <ul class="submenu">
-          <li><a href="CLicencias.php">Leer</a></li>
+          <li><a href="CULicencias.php">Leer</a></li>
    
         </ul>
       </li>
@@ -43,7 +44,7 @@
       <li class="dropdown">
         <a href="#">Vehiculos</a> 
         <ul class="submenu">
-          <li><a href="CVehiculos.php">Leer</a></li>
+          <li><a href="CUVehiculos.php">Leer</a></li>
        
         </ul>
       </li>
@@ -51,7 +52,7 @@
       <li class="dropdown">
         <a href="#">Tarjeta de Circulación</a> 
         <ul class="submenu">
-          <li><a href="CTarjetas.php">Leer</a></li>
+          <li><a href="CUTarjetas.php">Leer</a></li>
      
         </ul>
       </li>
@@ -61,7 +62,7 @@
       <li class="dropdown">
         <a href="#">Tenencias</a> 
         <ul class="submenu">
-          <li><a href="CTenencias.php">Leer</a></li>
+          <li><a href="CUTenencias.php">Leer</a></li>
       
         </ul>
       </li>
@@ -69,14 +70,14 @@
       <li class="dropdown">
         <a href="#">Verificaciones</a> 
         <ul class="submenu">
-          <li><a href="CVerificaciones.php">Leer</a></li>
+          <li><a href="CUVerificaciones.php">Leer</a></li>
 
         </ul>
       </li>
       <li class="dropdown">
         <a href="#">Centros de Verificación</a> 
         <ul class="submenu">
-          <li><a href="CCentrosVerificacion.php">Leer</a></li>
+          <li><a href="CUCentrosVerificacion.php">Leer</a></li>
 
         </ul>
       </li>
@@ -84,7 +85,7 @@
       <li class="dropdown">
         <a href="#">Multas</a> 
         <ul class="submenu">
-          <li><a href="CMultas.php">Leer</a></li>
+          <li><a href="CUMultas.php">Leer</a></li>
         </ul>
       </li>
     </ul>
