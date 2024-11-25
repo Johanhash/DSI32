@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2024 a las 09:18:21
+-- Tiempo de generación: 25-11-2024 a las 12:38:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -67,7 +67,8 @@ CREATE TABLE `conductores` (
 
 INSERT INTO `conductores` (`ConductorID`, `Nombre`, `Apellido`, `FechaNac`, `Domicilio`, `Telefono`, `TipoSangre`, `DonadorOrg`) VALUES
 (1, 'Johan', 'Juarez', '2024-10-27', 'San Juan', '462312384', 'A+', 'Si'),
-(2, 'Arlin', 'Monti', '2024-10-27', 'Durazno', '462312384', 'A+', 'No');
+(2, 'Arlin', 'Monti', '2024-10-27', 'Durazno', '462312384', 'A+', 'No'),
+(3, 'Chema', 'Pedraza', '2024-11-27', 'Av de las ciencias', '4425752698', 'O-', 'Si');
 
 -- --------------------------------------------------------
 
@@ -92,8 +93,10 @@ CREATE TABLE `cuentas` (
 INSERT INTO `cuentas` (`UserName`, `Pwd`, `Tipo`, `Status`, `Bloqueo`, `Intentos`, `Llave`) VALUES
 ('', '', 'U', 1, 0, 0, 'ab4c968419c20ee18d8f4b7a54aca8a0'),
 ('Chema', 'C1234', 'U', 1, 0, 1, '7b6b8ef7a2c841891f1198e4d309ca63'),
+('Johan', 'Pablo', 'U', 1, 0, 0, '512fbef2533d66465a9a7930070e96d7'),
+('Johanes', 'Pablo', 'U', 1, 0, 0, '28443edf0fda5275f78fc858baa0c879'),
 ('Juan', 'J1234', 'A', 1, 0, 0, '12345678'),
-('Luis', 'L1234', 'A', 1, 0, 0, '1234567'),
+('Luis', 'L1234', 'A', 1, 0, 0, '28443edf0fda5275f78fc858baa0c879'),
 ('Maria', 'M1234', 'U', 0, 0, 0, '123456');
 
 -- --------------------------------------------------------
@@ -118,6 +121,43 @@ CREATE TABLE `datoslicencia` (
 ,`FechaNac` date
 ,`DonadorOrg` varchar(100)
 ,`TipoSangre` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `datostarjetacirculacion`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `datostarjetacirculacion` (
+`Folio` varchar(50)
+,`rfcPropietario` varchar(100)
+,`Vigencia` varchar(20)
+,`FechaExp` date
+,`OficinaExp` int(11)
+,`Movimiento` varchar(100)
+,`NIV` varchar(50)
+,`Placa` varchar(20)
+,`PropietarioID` varchar(10)
+,`PropietarioNombre` varchar(100)
+,`Localidad` varchar(50)
+,`Municipio` varchar(50)
+,`VehiculoID` varchar(10)
+,`VehiculoNIV` varchar(20)
+,`Marca` varchar(20)
+,`Linea` varchar(20)
+,`Sublinea` varchar(20)
+,`Color` varchar(20)
+,`Cilindro` int(11)
+,`Origen` varchar(20)
+,`Capacidad` int(11)
+,`Puertas` int(11)
+,`Asientos` int(11)
+,`Combustible` varchar(20)
+,`Transmision` varchar(20)
+,`Clase` int(11)
+,`Tipo` int(11)
+,`Uso` int(11)
 );
 
 -- --------------------------------------------------------
@@ -149,7 +189,7 @@ CREATE TABLE `licencias` (
 INSERT INTO `licencias` (`NoLicencia`, `Foto`, `Nombre`, `Apellido`, `Firma`, `TipoLicencia`, `FechaExp`, `Observacion`, `Antiguedad`, `Domicilio`, `Restriccion`, `Vigencia`, `ConductorID`) VALUES
 (1, '', 'Johan', 'Juarez', '', 'A', '2024-10-21', 'Usa lentes', 3, 'San Juan', 'Ninguna', '2024-11-06', 1),
 (2, '', 'Arlin', 'Estefany', '', 'A', '2024-11-22', 'Ninguna', 0, 'Durazno #600', '-----', '2024-11-30', 2),
-(3, 'caminos.jpg', 'Fernanda', 'Estefany', 'caminos.jpg', 'A', '2024-10-31', 'Ninguna', 0, 'Durazno', '------------', '2024-11-01', 2);
+(3, 'uploads/R.jpeg', 'dwadwd', 'wdadwwad', 'uploads/firma.jpeg', 'B', '2024-11-27', 'dawwad', 3, 'dawdwadwa', 'dawdawaw', '2029-11-27', 3);
 
 -- --------------------------------------------------------
 
@@ -228,7 +268,7 @@ CREATE TABLE `tarjetas` (
 --
 
 INSERT INTO `tarjetas` (`Folio`, `rfcPropietario`, `Vigencia`, `FechaExp`, `OficinaExp`, `Movimiento`, `NIV`, `PropietarioID`, `VehiculoID`, `Placa`) VALUES
-('1', 'TMJOP15', '4 Años', '2024-10-01', 1, 'Ninguno', 'NN123', '1', '1', ''),
+('1', 'TMJOP15', '4 Años', '2024-10-01', 1, 'Ninguno', 'NN123', '1', '1', 'UMH'),
 ('2', 'A2', '4 años ', '2024-11-15', 2, 'Tarjeta circulacion', 'AAA', '2', '2', ''),
 ('3', 'ADWAWDAW', '3', '2024-11-27', 2, 'WADDAW', 'WDADAWDD', '3', '3', 'DWADAWD');
 
@@ -325,6 +365,15 @@ DROP TABLE IF EXISTS `datoslicencia`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `datoslicencia`  AS SELECT `l`.`NoLicencia` AS `NoLicencia`, `l`.`Foto` AS `Foto`, `l`.`Nombre` AS `Nombre`, `l`.`Apellido` AS `Apellido`, `l`.`TipoLicencia` AS `TipoLicencia`, `l`.`FechaExp` AS `FechaExp`, `l`.`Vigencia` AS `Vigencia`, `l`.`Antiguedad` AS `Antiguedad`, `l`.`Restriccion` AS `Restriccion`, `l`.`Observacion` AS `Observacion`, `l`.`Domicilio` AS `Domicilio`, `l`.`Firma` AS `Firma`, `c`.`FechaNac` AS `FechaNac`, `c`.`DonadorOrg` AS `DonadorOrg`, `c`.`TipoSangre` AS `TipoSangre` FROM (`licencias` `l` join `conductores` `c` on(`l`.`ConductorID` = `c`.`ConductorID`)) ;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `datostarjetacirculacion`
+--
+DROP TABLE IF EXISTS `datostarjetacirculacion`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `datostarjetacirculacion`  AS SELECT `t`.`Folio` AS `Folio`, `t`.`rfcPropietario` AS `rfcPropietario`, `t`.`Vigencia` AS `Vigencia`, `t`.`FechaExp` AS `FechaExp`, `t`.`OficinaExp` AS `OficinaExp`, `t`.`Movimiento` AS `Movimiento`, `t`.`NIV` AS `NIV`, `t`.`Placa` AS `Placa`, `p`.`PropietarioID` AS `PropietarioID`, `p`.`Nombre` AS `PropietarioNombre`, `p`.`Localidad` AS `Localidad`, `p`.`Municipio` AS `Municipio`, `v`.`VehiculoID` AS `VehiculoID`, `v`.`NIV` AS `VehiculoNIV`, `v`.`Marca` AS `Marca`, `v`.`Linea` AS `Linea`, `v`.`Sublinea` AS `Sublinea`, `v`.`Color` AS `Color`, `v`.`Cilindro` AS `Cilindro`, `v`.`Origen` AS `Origen`, `v`.`Capacidad` AS `Capacidad`, `v`.`Puertas` AS `Puertas`, `v`.`Asientos` AS `Asientos`, `v`.`Combustible` AS `Combustible`, `v`.`Transmision` AS `Transmision`, `v`.`Clase` AS `Clase`, `v`.`Tipo` AS `Tipo`, `v`.`Uso` AS `Uso` FROM ((`tarjetas` `t` join `propietarios` `p` on(`t`.`PropietarioID` = `p`.`PropietarioID`)) join `vehiculos` `v` on(`t`.`VehiculoID` = `v`.`VehiculoID`)) ;
+
 --
 -- Índices para tablas volcadas
 --
@@ -412,7 +461,7 @@ ALTER TABLE `conductores`
 -- AUTO_INCREMENT de la tabla `licencias`
 --
 ALTER TABLE `licencias`
-  MODIFY `NoLicencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `NoLicencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

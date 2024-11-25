@@ -1,3 +1,4 @@
+
 <?php 
 $NoCentro=$_GET['NoCentro'];
 $SQL ="SELECT * FROM CentrosVerificacion WHERE NoCentro='$NoCentro'";

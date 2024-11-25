@@ -1,6 +1,16 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    // Redirigir al usuario a la página de inicio de sesión
+    header('Location: FAcceso.php');
+    exit;
+}
+?>
 <?php 
-$Conductorid=$_GET['Conductorid'];
-$SQL ="SELECT * FROM Conductores WHERE Conductorid='$Conductorid';";
+$ConductorID=$_GET['ConductorID'];
+$SQL ="SELECT * FROM Conductores WHERE ConductorID='$ConductorID';";
 include("Controlador.php"); 
 $Con=Conectar ();
 $ResultSet=Ejecutar($Con,$SQL);

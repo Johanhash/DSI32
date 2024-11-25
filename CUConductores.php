@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    // Redirigir al usuario a la página de inicio de sesión
+    header('Location: FAcceso.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    // Redirigir al usuario a la página de inicio de sesión
+    header('Location: FAcceso.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,11 +175,14 @@
         <label>Restriccion</label>
         <input type="text" name="Restriccion" id="Restriccion">
         <br>
-        <label>Vigencia</label>
-            <input type="date" name="Vigencia" id="Vigencia">
+        <label for="Vigencia">Selecciona Vigencia:</label>
+        <select name="Vigencia" required>
+          <option value="3">3 años</option>
+          <option value="5">5 años</option>
+        </select>
         <br>
         <label>Conductor</label>
-        <input type="number" name="Conductor" id="Conductor">
+        <input type="number" name="ConductorID" id="ConductorID">
     <br>
             <input type="submit">
         </form>

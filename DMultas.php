@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    // Redirigir al usuario a la página de inicio de sesión
+    header('Location: FAcceso.php');
+    exit;
+}
+?>
+<?php
     include("Controlador.php");
     $Folio = $_GET['Folio'];
     $SQL = "DELETE FROM Multas WHERE Folio='$Folio'";

@@ -4,7 +4,7 @@ include("controlador.php");
 
 $Placa=$_GET['Placa'];
 $Con=conectar();
-$SQL="SELECT * FROM Datos_licencia WHERE placa= '$Placa';";
+$SQL="SELECT * FROM DatosTarjetaCirculacion WHERE Placa= '$Placa';";
 $ResultSet=ejecutar($Con, $SQL);
 $DatosCuenta=mysqli_fetch_row($ResultSet);
 
@@ -22,7 +22,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,' PROPIETARIO');
 $pdf->SetXY(17,10);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(0,0,''.$DatosCuenta[0].'');
+$pdf->Cell(0,0,''.$DatosCuenta[9].'');
 
 // RFC
 $pdf->SetXY(7,13);
@@ -30,7 +30,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'RFC');
 $pdf->SetXY(7,14);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(0,0,''.$DatosCuenta[5].'');
+$pdf->Cell(0,0,''.$DatosCuenta[1].'');
 
 // NUMERO DE SERIE
 $pdf->SetXY(24,13);
@@ -38,7 +38,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'NUMERO DE SERIE');
 $pdf->SetXY(24,14);
 $pdf->SetFont('Arial','B',5);
-$pdf->Cell(1,1,'1FTCR14A6TPA47038');
+$pdf->Cell(1,1,''.$DatosCuenta[6].'');
 
 // Marca/Sublinea
 $pdf->SetXY(24,16);
@@ -46,17 +46,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'MARCA/LINEA/SUBLINEA');
 $pdf->SetXY(24,17);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(1,1,''.$DatosCuenta[8].'/RANGER/XLT');
-
-
-
-// Tipo de servicio
-$pdf->SetXY(7,7);
-$pdf->SetFont('Arial','B',3);
-$pdf->Cell(0,0,'TIPO DE SERVICIO');
-$pdf->SetXY(7,8);
-$pdf->SetFont('Arial','B',4);
-$pdf->Cell(1,1,''.$DatosCuenta[1].'');
+$pdf->Cell(1,1,''.$DatosCuenta[14].'/'.$DatosCuenta[15].'/'.$DatosCuenta[16].'');
 
 // Holograma
 $pdf->SetXY(27,7);
@@ -71,7 +61,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'FOLIO');
 $pdf->SetXY(38,8);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(1,1,'178935050');
+$pdf->Cell(1,1,''.$DatosCuenta[0].'');
 
 // Vigencia
 $pdf->SetXY(51,7);
@@ -79,7 +69,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'VIGENCIA');
 $pdf->SetXY(51,8);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(1,1,''.$DatosCuenta[3].'');
+$pdf->Cell(1,1,''.$DatosCuenta[2].'');
 
 // Placa
 $pdf->SetXY(62,7);
@@ -87,32 +77,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'PLACA');
 $pdf->SetXY(62,8);
 $pdf->SetFont('Arial','B',5);
-$pdf->Cell(1,1,''.$DatosCuenta[4].'');
-
-$pdf->SetXY(80,13);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(-3,-3,'A');
-$pdf->SetXY(80,14);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(2,2,'1');
-$pdf->SetXY(80,15);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(3,3,'6');
-$pdf->SetXY(80,16);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(4,4,'7');
-$pdf->SetXY(80,17);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(5,5,'9');
-$pdf->SetXY(80,18);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(6,6,'3');
-$pdf->SetXY(80,19);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(7,7,'0');
-$pdf->SetXY(80,20);
-$pdf->SetFont('Arial','B',4.5);
-$pdf->Cell(8,8,'5');
+$pdf->Cell(1,1,''.$DatosCuenta[7].'');
 
 // Localidad
 $pdf->SetXY(7,16);
@@ -129,12 +94,8 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'MUNICIPIO');
 $pdf->SetXY(7,21);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(0,0,'CADEREYTA DE');
-$pdf->SetXY(7,22);
-$pdf->SetFont('Arial','B',4);
-$pdf->Cell(1,1,'MONTES');
+$pdf->Cell(0,0,''.$DatosCuenta[11].'');
 
-// Serie
 $pdf->SetXY(7,24);
 $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'NUMERO DE CONSTANCIA');
@@ -142,17 +103,16 @@ $pdf->SetXY(7,25);
 $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'DE INSCRIPCION(NCI)');
 
-// CILINDRAJE
+
 $pdf->SetXY(24,24);
 $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'CILINDRAJE');
 
-// CILINDRAJE
 $pdf->SetXY(35,24);
 $pdf->SetFont('Arial','B',3);
-$pdf->Cell(0,0,''.$DatosCuenta[10].'');
+$pdf->Cell(0,0,''.$DatosCuenta[21].'');
 
-// CILINDRAJE
+
 $pdf->SetXY(40,24);
 $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'CVE   VEHICULAR');
@@ -166,7 +126,7 @@ $pdf->Cell(0.5,0.5,'CAPACIDAD');
 // CAPACIDAD
 $pdf->SetXY(35,25);
 $pdf->SetFont('Arial','B',3);
-$pdf->Cell(0.5,0.5,''.$DatosCuenta[11].'');
+$pdf->Cell(0.5,0.5,''.$DatosCuenta[20].'');
 
 // PUERTAS
 $pdf->SetXY(24,26);
@@ -181,7 +141,7 @@ $pdf->Cell(0,0,'CLASE    2');
 // PUERTAS
 $pdf->SetXY(35,26);
 $pdf->SetFont('Arial','B',3);
-$pdf->Cell(1,1,'2');
+$pdf->Cell(1,1,''.$DatosCuenta[21].'');
 
 // ASIENTOS
 $pdf->SetXY(24,27);
@@ -197,7 +157,7 @@ $pdf->Cell(0,0,'TIPO        9');
 // ASIENTOS
 $pdf->SetXY(35,27);
 $pdf->SetFont('Arial','B',3);
-$pdf->Cell(1.5,1.5,''.$DatosCuenta[13].'');
+$pdf->Cell(1.5,1.5,''.$DatosCuenta[22].'');
 
 // ORIGEN
 $pdf->SetXY(7,27);
@@ -211,7 +171,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'COLOR');
 $pdf->SetXY(7,30);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(0,0,'VERDE');
+$pdf->Cell(0,0,''.$DatosCuenta[17].'');
 
 
 
@@ -228,7 +188,7 @@ $pdf->Cell(0,0,'USO        36');
 // COMBUSTIBLE
 $pdf->SetXY(35,28);
 $pdf->SetFont('Arial','B',3);
-$pdf->Cell(1.5,1.5,''.$DatosCuenta[14].'');
+$pdf->Cell(1.5,1.5,''.$DatosCuenta[23].'');
 
 // TRANSMISION
 $pdf->SetXY(24,29);
@@ -236,20 +196,13 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(1.5,1.5,'TRANSMISION');
 $pdf->SetXY(24,30);
 $pdf->SetFont('Arial','B',5);
-$pdf->Cell(1,2,''.$DatosCuenta[16].'');
+$pdf->Cell(1,2,''.$DatosCuenta[24].'');
 
 
 $pdf->SetXY(40,29);
 $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'RPA');
 
-// Modelo
-$pdf->SetXY(53,13);
-$pdf->SetFont('Arial','B',3);
-$pdf->Cell(0,0,'MODELO');
-$pdf->SetXY(53,14);
-$pdf->SetFont('Arial','B',4);
-$pdf->Cell(0,0,''.$DatosCuenta[6].'');
 
 // Operacion
 $pdf->SetXY(53,15);
@@ -281,7 +234,7 @@ $pdf->SetFont('Arial','B',3);
 $pdf->Cell(0,0,'FECHA DE EXPEDICION');
 $pdf->SetXY(53,24);
 $pdf->SetFont('Arial','B',4);
-$pdf->Cell(0.5,0.5,''.$DatosCuenta[15].'');
+$pdf->Cell(0.5,0.5,''.$DatosCuenta[3].'');
 
 // OFICINA EXPENDEDORA
 $pdf->SetXY(53,25);
@@ -306,18 +259,15 @@ $pdf->SetXY(53,29);
 $pdf->SetFont('Arial','B',4);
 $pdf->Cell(2.5,2.5,'HECHO EN USA');
 
-$pdf->SetDrawColor(0, 0, 255); // Azul
-$pdf->SetXY(1,29);
-$pdf->Cell(0,0,'',1,1,'L');
 
-$pdf->Image('QR.png',65,29,14,14);  
+//$pdf->Image('QR.png',65,29,14,14);  
 
-$pdf->Image('QRO.png',24,31,10,10); 
+$pdf->Image('logoq.jpg',24,33,9,9); 
 
-$pdf->Image('QRONOSOTROS.JPG',12,31,10,10); 
+$pdf->Image('queretaro.png',12,31,10,10); 
 
 
-// PODER EJECUTIVO EL ESTADO DE QUERETARO
+
 $pdf->SetXY(35,33);
 $pdf->SetFont('Arial','B',5.5);
 $pdf->Cell(0,0,'PODER EJECUTIVO DEL');
@@ -334,16 +284,15 @@ $pdf->Cell(1,1,'SECRETARIA DE PLANEACION Y FINANZAS');
 
 $pdf->SetFillColor(0, 0, 255); // Azul
 
-// Configurar el color del texto
+
 $pdf->SetTextColor(255, 255, 255); // Blanco
 
-// Posicionar el texto
+
 $pdf->SetXY(16, 42.5);
 
 $pdf->SetFont('Arial','B',6);
-// Crear una celda con fondo
-$pdf->Cell(50, 4.5, 'TARJETA DE CIRCULACION VEHICULAR', 0, 1, 'C', true); // 70mm ancho, 10mm alto
 
+$pdf->Cell(50, 4.5, 'TARJETA DE CIRCULACION VEHICULAR', 0, 1, 'C', true); 
 $pdf->Output();
 
 desconectar($Con);
