@@ -163,7 +163,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
         <input type="number" name="Asientos" id="Asientos">
     <br>
     <label>Combustible</label>
-        <input type="number" name="Combustible" id="Combustible">
+        <input type="text" name="Combustible" id="Combustible">
         <br>
     <label>Transmisión</label>
         <input type="text" name="Transmision" id="Transmision">

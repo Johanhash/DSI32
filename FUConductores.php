@@ -10,7 +10,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 ?>
 <?php 
 $ConductorID=$_GET['ConductorID'];
-$SQL ="SELECT * FROM Conductores WHERE ConductorID='$ConductorID';";
+$SQL ="SELECT * FROM conductores WHERE ConductorID='$ConductorID';";
 include("Controlador.php"); 
 $Con=Conectar ();
 $ResultSet=Ejecutar($Con,$SQL);
@@ -66,7 +66,7 @@ Desconectar($Con);
 
 <form  method="get"  action="UConductores.php"> 
         <label>Conductor ID</label>
-        <input type="number" name="Conductorid" id="Conductorid"
+        <input type="number" name="ConductorID" id="ConductorID"
         value="<?php print($Fila[0]);?>">    
     <br>
     <label>Nombre</label>
