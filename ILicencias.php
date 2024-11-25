@@ -10,8 +10,10 @@
     $Antiguedad =$_REQUEST['Antiguedad'];
     $Domicilio =$_REQUEST['Domicilio'];
     $Restriccion =$_REQUEST['Restriccion'];
-    $Vigencia =$_REQUEST['Vigencia'];
+    $VigenciaSeleccionada = $_REQUEST['Vigencia'];
     $Conductor =$_REQUEST['Conductor'];
+
+    $Vigencia = date('Y-m-d', strtotime("+$VigenciaSeleccionada years", strtotime($FechaExp)));
 
 
     $SQL ="INSERT INTO Licencias VALUES('$NoLicencia','$Foto','$Nombre','$Apellido',
