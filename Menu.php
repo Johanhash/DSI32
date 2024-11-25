@@ -33,7 +33,7 @@ $role = $_SESSION['role'];
         <a href="#">Propietarios</a> 
         <ul class="submenu">
           <li><a href="FPropietarios.php">Crear</a></li>
-          <li><a href="CPropietarios.php">Consultar</a></li>
+          <li><a href="CPropietarios.php">Leer</a></li>
         </ul>
       </li>
 
@@ -41,7 +41,7 @@ $role = $_SESSION['role'];
         <a href="#">Conductores</a> 
         <ul class="submenu">
           <li><a href="FConductores.php">Crear</a></li>
-          <li><a href="CConductores.php">Consultar</a></li>
+          <li><a href="CConductores.php">Leer</a></li>
         </ul>
       </li>
   
@@ -49,7 +49,7 @@ $role = $_SESSION['role'];
         <a href="#">Licencias</a> 
         <ul class="submenu">
           <li><a href="FLicencias.php">Crear</a></li>
-          <li><a href="CLicencias.php">Consultar</a></li>
+          <li><a href="CLicencias.php">Leer</a></li>
         </ul>
       </li>
 
@@ -75,7 +75,7 @@ $role = $_SESSION['role'];
         <a href="#">Tenencias</a> 
         <ul class="submenu">
           <li><a href="FTenencias.php">Crear</a></li>
-          <li><a href="CTenencias.php">Consultar</a></li>
+          <li><a href="CTenencias.php">Leer</a></li>
         </ul>
       </li>
      
@@ -83,14 +83,14 @@ $role = $_SESSION['role'];
         <a href="#">Verificaciones</a> 
         <ul class="submenu">
           <li><a href="FVerificaciones.php">Crear</a></li>
-          <li><a href="CVerificaciones.php">Consultar</a></li>
+          <li><a href="CVerificaciones.php">Leer</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#">Centros de Verificación</a> 
         <ul class="submenu">
           <li><a href="FCentrosVerificacion.php">Crear</a></li>
-          <li><a href="CCentrosVerificacion.php">Consultar</a></li>
+          <li><a href="CCentrosVerificacion.php">Leer</a></li>
         </ul>
       </li>
 
@@ -98,7 +98,7 @@ $role = $_SESSION['role'];
         <a href="#">Multas</a> 
         <ul class="submenu">
           <li><a href="FMultas.php">Crear</a></li>
-          <li><a href="CMultas.php">Consultar</a></li>
+          <li><a href="CMultas.php">Leer</a></li>
         </ul>
       </li>
     </ul>

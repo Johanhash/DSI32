@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2024 a las 12:38:03
+-- Tiempo de generación: 25-11-2024 a las 13:22:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -68,7 +68,7 @@ CREATE TABLE `conductores` (
 INSERT INTO `conductores` (`ConductorID`, `Nombre`, `Apellido`, `FechaNac`, `Domicilio`, `Telefono`, `TipoSangre`, `DonadorOrg`) VALUES
 (1, 'Johan', 'Juarez', '2024-10-27', 'San Juan', '462312384', 'A+', 'Si'),
 (2, 'Arlin', 'Monti', '2024-10-27', 'Durazno', '462312384', 'A+', 'No'),
-(3, 'Chema', 'Pedraza', '2024-11-27', 'Av de las ciencias', '4425752698', 'O-', 'Si');
+(3, 'Chema', 'Pedrazaa', '2024-11-27', 'Av de las ciencias', '4425752698', 'A+', 'Si');
 
 -- --------------------------------------------------------
 
@@ -270,7 +270,7 @@ CREATE TABLE `tarjetas` (
 INSERT INTO `tarjetas` (`Folio`, `rfcPropietario`, `Vigencia`, `FechaExp`, `OficinaExp`, `Movimiento`, `NIV`, `PropietarioID`, `VehiculoID`, `Placa`) VALUES
 ('1', 'TMJOP15', '4 Años', '2024-10-01', 1, 'Ninguno', 'NN123', '1', '1', 'UMH'),
 ('2', 'A2', '4 años ', '2024-11-15', 2, 'Tarjeta circulacion', 'AAA', '2', '2', ''),
-('3', 'ADWAWDAW', '3', '2024-11-27', 2, 'WADDAW', 'WDADAWDD', '3', '3', 'DWADAWD');
+('3', 'dwadawdaw', '2', '2024-11-27', 2, 'dwadw', 'dwadwdawawd', '3', '3', 'awdaw678');
 
 -- --------------------------------------------------------
 
