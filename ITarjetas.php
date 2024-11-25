@@ -12,9 +12,10 @@ $rfcPropietario =$_POST['rfcPropietario'];
 $NIV =$_POST['NIV'];
 $PropietarioID =$_POST['PropietarioID'];
 $VehiculoID =$_POST['VehiculoID'];
+$Placa =$_POST['Placa'];
 
     
-    $SQL ="INSERT INTO Tarjetas VALUES('$Folio','$rfcPropietario','$Vigencia','$FechaExp','$OficinaExp','$Movimiento','$NIV','$PropietarioID','$VehiculoID')";
+    $SQL ="INSERT INTO Tarjetas VALUES('$Folio','$rfcPropietario','$Vigencia','$FechaExp','$OficinaExp','$Movimiento','$NIV','$PropietarioID','$VehiculoID','$Placa');";
 
 // Enviar datos al controlador
 include("Controlador.php"); 

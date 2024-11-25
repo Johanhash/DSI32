@@ -1,7 +1,6 @@
 <?php
 
 $PropietarioID =$_REQUEST['PropietarioID'];
-$RFC =$_REQUEST['RFC'];
 $Nombre =$_REQUEST['Nombre'];
 $Localidad =$_REQUEST['Localidad'];
 $Municipio =$_REQUEST['Municipio'];

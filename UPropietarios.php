@@ -1,11 +1,10 @@
 <?php
 $PropietarioID = $_REQUEST['PropietarioID'];
-$RFC = $_REQUEST['RFC'];
 $Nombre = $_REQUEST['Nombre'];
 $Localidad = $_REQUEST['Localidad'];
 $Municipio = $_REQUEST['Municipio'];
 
-$SQL = "UPDATE Propietarios SET Nombre='$Nombre', RFC='$RFC',
+$SQL = "UPDATE Propietarios SET Nombre='$Nombre',
 Localidad='$Localidad', Municipio='$Municipio' 
 WHERE PropietarioID= '$PropietarioID';";
 

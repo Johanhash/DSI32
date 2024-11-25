@@ -149,6 +149,9 @@
             <label>ID Vehiculo</label>
             <input type="number" name="VehiculoID" id="VehiculoID">
             <br>
+            <label>Placa</label>
+            <input type="text" name="Placa" id="Placa">
+            <br>
             <input type="submit">
         </form>
     <div class="back-button-container">

@@ -83,6 +83,11 @@
                     </label>
                 </div>
             </div>
+            <div>
+                    <label>
+                        <input type="radio" name="Atributo" value="Placa"> Placa
+                    </label>
+                </div>
             <input type="submit" value="Buscar" class="btn btn-primary">
         </form>
 
@@ -111,6 +116,7 @@
                                 <th>NIV</th>
                                 <th>Propietario ID</th>
                                 <th>Vehiculo ID</th>
+                                <th>Placa</th>
                         </tr>
                       </thead>
                       <tbody>";
