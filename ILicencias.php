@@ -16,24 +16,28 @@
     $Vigencia = date('Y-m-d', strtotime("+$VigenciaSeleccionada years", strtotime($FechaExp)));
 
 
-    $SQL ="INSERT INTO Licencias VALUES('$NoLicencia','$Foto','$Nombre','$Apellido',
-   '$Firma', '$TipoLicencia','$FechaExp','$Observacion',
-    '$Antiguedad','$Domicilio',
-    '$Restriccion','$Vigencia','$Conductor')";
-    /*print($SQL)*/;
+    $target_dir = "uploads/";
+    if (!is_dir($target_dir)) {
+        mkdir($target_dir, 0777, true);
+    }
 
+    $target_file_foto = $target_dir . basename($Foto);
+    $target_file_firma = $target_dir . basename($Firma);
 
-//Enviar datos al controlador 
-include("Controlador.php"); 
-$Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
+    if (move_uploaded_file($_FILES["Foto"]["tmp_name"], $target_file_foto) && move_uploaded_file($_FILES["Firma"]["tmp_name"], $target_file_firma)) {
+        $Con = Conectar();
+        $SQL = "INSERT INTO Licencias (NoLicencia, Foto, Firma, Nombre, Apellido, TipoLicencia, FechaExp, Observacion, Antiguedad, Domicilio, Restriccion, Vigencia, ConductorID)
+                VALUES ('$NoLicencia', '$target_file_foto', '$target_file_firma', '$Nombre', '$Apellido', '$TipoLicencia', '$FechaExp', '$Observacion', '$Antiguedad', '$Domicilio', '$Restriccion', '$Vigencia', '$ConductorID')";
+
+        try {
+            $ResultSet = Ejecutar($Con, $SQL);
+            echo "Registro insertado exitosamente.";
+        } catch (mysqli_sql_exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        Desconectar($Con);
+    } else {
+        echo "Hubo un error al subir los archivos.";
+    }
 }
-Desconectar($Con); 
-
-
-   
 ?>
