@@ -1,4 +1,4 @@
-    <?php
+<?php
  $NoCentro =$_GET['NoCentro'];
  $NoLinea =$_GET['NoLinea'];
  $Tecnico =$_GET['Tecnico'];
@@ -10,20 +10,22 @@
     SET NoLinea='$NoLinea',Tecnico='$Tecnico',
     FechaExp='$FechaExp',HoraEntrada='$HoraEntrada',
     HoraSalida='$HoraSalida'
-   WHERE  NoCentro='$NoCentro'";
+   WHERE  NoCentro='$NoCentro';";
 
-   /* print($SQL)*/
+include("controlador.php");
 
-   
-//Enviar datos al controlador 
-include("Controlador.php"); 
 $Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
-}
-Desconectar($Con); 
+$ResultSet=Ejecutar($Con, $SQL);
 
+if ($ResultSet == 1) {
+    // Redirigir al formulario de actualización con un mensaje de éxito
+    header("Location: FUCentrosVerificacion.php?NoCentro=$NoCentro&mensaje=exito");
+    exit();
+} else {
+    // Mostrar error si ocurre
+    echo "Error en la actualización: " . mysqli_error($Con);
+}
+
+procesar();
+desconectar($Con);
 ?>

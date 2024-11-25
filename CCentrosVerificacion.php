@@ -36,7 +36,7 @@
     <!-- Contenido principal -->
     <main class="main-content">
         <h1 class="text-center">Consulta de Centros de Verificacion</h1>
-        <form method="GET" action="CConductores.php" class="mb-4">
+        <form method="GET" action="CCentrosVerificacion.php" class="mb-4">
             <div class="form-group">
                 <label for="Criterio" class="form-label">Criterio de búsqueda</label>
                 <input type="text" id="Criterio" name="Criterio" class="form-control" placeholder="Ingrese su criterio">
