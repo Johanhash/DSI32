@@ -153,7 +153,7 @@
                     echo "<td>$Valor</td>";
                 }
                 echo "<td><a href='DLicencias.php?NoLicencia={$Fila['NoLicencia']}'><button class='btn-back'>Eliminar</button></a></td>";
-                echo "<td><a href='FLicencias.php?NoLicencia={$Fila['NoLicencia']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "<td><a href='FULicencias.php?NoLicencia={$Fila['NoLicencia']}'><button class='btn-update'>Actualizar</button></a></td>";
                 echo "</tr>";
             }
             echo "</tbody>";

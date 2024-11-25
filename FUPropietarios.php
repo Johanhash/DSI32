@@ -15,7 +15,6 @@ Desconectar($Con);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style_crear1.css">
     <script src="menu.js"></script>
-    
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -30,7 +29,6 @@ Desconectar($Con);
                     <ul class="submenu">
                         <li><a href="FPropietarios.php">Crear</a></li>
                         <li><a href="CPropietarios.php">Leer</a></li>
-          
                     </ul>
                 </li>
             </ul>
@@ -45,28 +43,39 @@ Desconectar($Con);
     <!-- Contenido principal -->
     <div class="container">
         <h1 class="text-center">Actualizar Propietario</h1>
-        <form method="GET" action="UPropietarios.php" class="border p-4 bg-white shadow rounded">
-            <div class="form-group">
-                <label for="PropietarioID">ID Propietario</label>
-                <input type="number" name="PropietarioID" id="PropietarioID" class="form-control"
-                       value="<?php echo $Fila[0]; ?>" readonly>
-            </div>
-            <div class="form-group">
-                <label for="RFC">RFC</label>
-                <input type="text" name="RFC" id="RFC" class="form-control" value="<?php echo $Fila[1]; ?>">
-            </div>
-            <div class="form-group">
-                <label for="Nombre">Nombre</label>
-                <input type="text" name="Nombre" id="Nombre" class="form-control" value="<?php echo $Fila[2]; ?>">
-            </div>
-            <div class="form-group">
-                <label for="Localidad">Localidad</label>
-                <input type="text" name="Localidad" id="Localidad" class="form-control" value="<?php echo $Fila[3]; ?>">
-            </div>
-            <div class="form-group">
-                <label for="Municipio">Municipio</label>
-                <input type="text" name="Municipio" id="Municipio" class="form-control" value="<?php echo $Fila[4]; ?>">
-            </div>
+
+        <!-- Mostrar mensaje de éxito si existe -->
+        <?php
+
+        if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'exito') {
+            echo "<div class='alert alert-success text-center' role='alert'>
+                    ¡Actualización exitosa!
+                  </div>";
+        }
+        ?>
+
+<form  method="GET" action="UPropietarios.php"> 
+        <label>Propietario</label>
+        <input type="text" name="PropietarioID" id="PropietarioID"
+        value="<?php print($Fila[0]);?>">    
+    <br>
+    
+    <label>RFC</label>
+            <input type="text" name="RFC" id="RFC"
+            value="<?php print($Fila[1]);?>">
+    <br>
+    <label>Nombre</label>
+            <input type="text" name="Nombre" id="Nombre"
+            value="<?php print($Fila[2]);?>">
+    <br>
+    <label>Localidad</label>
+        <input type="text" name="Localidad" id="Localidad"
+        value="<?php print($Fila[3]);?>">    
+    <br>
+    <label>Municipio</label>
+        <input type="text" name="Municipio" id="Municipio"
+        value="<?php print($Fila[4]);?>">
+    <br>
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
     </div>

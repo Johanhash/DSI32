@@ -120,7 +120,7 @@
                     echo "<td>$Valor</td>";
                 }
                 echo "<td><a href='DConductores.php?ConductorID={$Fila['ConductorID']}'><button class='btn-back'>Eliminar</button></a></td>";
-                echo "<td><a href='FConductores.php?ConductorID={$Fila['ConductorID']}'><button class='btn-update'>Actualizar</button></a></td>";
+                echo "<td><a href='FUConductores.php?ConductorID={$Fila['ConductorID']}'><button class='btn-update'>Actualizar</button></a></td>";
                 echo "</tr>";
             }
             echo "</tbody>";

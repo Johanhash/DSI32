@@ -35,7 +35,7 @@
                 <label class="form-label">Atributo</label>
                 <div>
                     <label>
-                        <input type="radio" name="Atributo" value="Folio" required> Folio
+                        <input type="radio" name="Atributo" value="Folio" > Folio
                     </label>
                 </div>
                 <div>
@@ -61,7 +61,7 @@
                 </div>
                 <div>
                     <label>
-                        <input type="radio" name="Atributo" value="FolioTarjeta"> FolioTarjeta
+                        <input type="radio" name="Atributo" value="FolioTarjeta"> Folio de tarjeta
                     </label>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             include("Controlador.php");
 
             $Con = Conectar();
-            $SQL = "SELECT * FROM Vehiculos  WHERE $Atributo LIKE '%$Criterio%'";
+            $SQL = "SELECT * FROM Verificaciones  WHERE $Atributo LIKE '%$Criterio%'";
             $ResultSet = Ejecutar($Con, $SQL);
 
             if (mysqli_num_rows($ResultSet) > 0) {
@@ -95,8 +95,8 @@
                                     <th>Motivo</th>
                                     <th>Semestre</th>
                                     <th>Vigencia</th>
-                                    <th>FolioTarjeta ID</th>
-                                    <th>NoCentro</th>
+                                    <th>Folio de tarjeta ID</th>
+                                    <th>No de centro</th>
                         </tr>
                       </thead>
                       <tbody>";
@@ -109,10 +109,7 @@
                             <td>" . htmlspecialchars($Row['Semestre']) . "</td>
                             <td>" . htmlspecialchars($Row['Vigencia']) . "</td>
                             <td>" . htmlspecialchars($Row['FolioTarjeta']) . "</td>
-                            <td>" . htmlspecialchars($Row['NoCentro']) . "</td>
-
-                            
-                            
+                            <td>" . htmlspecialchars($Row['NoCentro']) . "</td>                            
                           </tr>";
                 }
 

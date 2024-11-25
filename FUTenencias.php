@@ -9,14 +9,59 @@ $Fila=mysqli_fetch_row($ResultSet);
 Desconectar($Con);
 ?>
 
-<html5>
-    <form  method="get" action="UTenencias.php"> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Actualizar Tenencias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style_crear1.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="Inicio.png" alt="Inicio" class="inicio-icon" onclick="location.href='Menu.php'">
+            </div>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">Tenencias</a>
+                    <ul class="submenu">
+                        <li><a href="FTarjetas.php">Crear</a></li>
+                        <li><a href="CTarjetas.php">Leer</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="session-controls">
+                <button class="btn-logout" onclick="location.href='FAcceso.html'">
+                    <img src="Cerrarse.png" alt="Cerrar Sesión" class="cerrar-icon">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1 class="text-center">Actualizar</h1>
+
+        <!-- Mostrar mensaje de éxito si existe -->
+        <?php
+
+        if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'exito') {
+            echo "<div class='alert alert-success text-center' role='alert'>
+                    ¡Actualización exitosa!
+                  </div>";
+        }
+        ?>
+
+<form  method="get" action="UTenencias.php"> 
         <label>Linea de Captura</label>
         <input type="text" name="LineaCaptura" id="LineaCaptura"
         value="<?php print($Fila[0]);?>">    
     <br>
     <label>Vehiculo</label>
-            <input type="text" name="Vehiculo" id="Vehiculo"
+            <input type="text" name="vehiculo" id="vehiculo"
             value="<?php print($Fila[1]);?>">
     <br>
     <label>Transaccion</label>
@@ -47,6 +92,9 @@ Desconectar($Con);
 <input type="text" name="FolioTarjeta" id="FolioTarjeta"
 value="<?php print($Fila[8]);?>">    
 <br>
-    <input type="submit"> 
-    </form>
-</html5>
+
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</body>
+</html>

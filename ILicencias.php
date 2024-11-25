@@ -1,20 +1,20 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include("Controlador.php");
+    $NoLicencia=$_REQUEST['NoLicencia'];
+    $Foto=$_REQUEST['Foto'];
+    $Nombre=$_REQUEST['Nombre'];
+    $Apellido=$_REQUEST['Apellido'];
+    $Firma=$_REQUEST['Firma'];
+    $TipoLicencia=$_REQUEST['TipoLicencia'];
+    $FechaExp=$_REQUEST['FechaExp']; 
+    $Observacion=$_REQUEST['Observacion'];
+    $Antiguedad =$_REQUEST['Antiguedad'];
+    $Domicilio =$_REQUEST['Domicilio'];
+    $Restriccion =$_REQUEST['Restriccion'];
+    $VigenciaSeleccionada = $_REQUEST['Vigencia'];
+    $Conductor =$_REQUEST['Conductor'];
 
-    $NoLicencia = $_POST['NoLicencia'];
-    $Foto = $_FILES['Foto']['name'];
-    $Firma = $_FILES['Firma']['name'];
-    $Nombre = $_POST['Nombre'];
-    $Apellido = $_POST['Apellido'];
-    $TipoLicencia = $_POST['TipoLicencia'];
-    $FechaExp = $_POST['FechaExp'];
-    $Observacion = $_POST['Observacion'];
-    $Antiguedad = $_POST['Antiguedad'];
-    $Domicilio = $_POST['Domicilio'];
-    $Restriccion = $_POST['Restriccion'];
-    $Vigencia = $_POST['Vigencia'];
-    $ConductorID = $_POST['ConductorID'];
+    $Vigencia = date('Y-m-d', strtotime("+$VigenciaSeleccionada years", strtotime($FechaExp)));
+
 
     $target_dir = "uploads/";
     if (!is_dir($target_dir)) {

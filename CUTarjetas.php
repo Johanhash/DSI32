@@ -103,14 +103,14 @@
                 echo "<thead>
                         <tr>
                                <<th>Folio</th>
-                               <th>rfcPropietario</th>
+                               <th>RFC Propietario</th>
                                 <th>Vigencia</th>
                                 <th>Fecha Expedicion</th>
                                 <th>Oficina Expedicion</th>
                                 <th>Movimiento</th>
                                 <th>NIV</th>
-                                <th>PropietarioID</th>
-                                <th>VehiculoID</th>
+                                <th>Propietario ID</th>
+                                <th>Vehiculo ID</th>
                         </tr>
                       </thead>
                       <tbody>";

@@ -12,28 +12,27 @@ $PropietarioID =$_POST['PropietarioID'];
 $VehiculoID =$_POST['VehiculoID'];
 
 
-
-
-    
     $SQL ="UPDATE Tarjetas
     SET  rfcPropietario='$rfcPropietario', Vigencia='$Vigencia',FechaExp='$FechaExp',
     OficinaExp='$OficinaExp',Movimiento='$Movimiento',
     NIV='$NIV',PropietarioID='$PropietarioID',VehiculoID='$VehiculoID' 
-    WHERE Folio='$Folio'"; 
+    WHERE Folio='$Folio';"; 
     
-    /*($SQL)*/ 
 
-    //Enviar datos al controlador 
-include("Controlador.php"); 
+include("controlador.php");
+
 $Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
+$ResultSet=Ejecutar($Con, $SQL);
+
+if ($ResultSet == 1) {
+    // Redirigir al formulario de actualización con un mensaje de éxito
+    header("Location: FUTarjetas.php?Folio=$Folio&mensaje=exito");
+    exit();
+} else {
+    // Mostrar error si ocurre
+    echo "Error en la actualización: " . mysqli_error($Con);
 }
 
-Desconectar($Con); 
-
-
+procesar();
+desconectar($Con);
 ?>

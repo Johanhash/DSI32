@@ -1,5 +1,5 @@
 <?php
-    $ConductorID=$_GET['ConductorID'];
+    $Conductorid=$_GET['Conductorid'];
     $Nombre=$_GET['Nombre'];
     $Apellido=$_GET['Apellido'];
     $FechaNac=$_GET['FechaNac'];
@@ -14,20 +14,22 @@
     Domicilio='$Domicilio',Telefono='$Telefono',
     TipoSangre='$TipoSangre',
     DonadorOrg='$DonadorOrg'
-    WHERE ConductorID='$ConductorID'";
-    /*print($SQL)*/
+    WHERE Conductorid='$Conductorid';";
     
 
-    //Enviar datos al controlador 
-include("Controlador.php"); 
-$Con=Conectar();
-$ResultSet=Ejecutar($Con,$SQL);
-if ($ResultSet == 1){
-    print("Registro insertado");
-}else{
-    print("Error"); 
-}
-Desconectar($Con); 
+include("controlador.php");
 
+$Con=Conectar();
+$ResultSet=Ejecutar($Con, $SQL);
+
+if ($ResultSet == 1) {
+    header("Location: FUConductores.php?Conductorid=$Conductorid&mensaje=exito");
+    exit();
+} else {
+    echo "Error en la actualización: " . mysqli_error($Con);
+}
+
+procesar();
+desconectar($Con);
 ?>
 

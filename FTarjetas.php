@@ -21,8 +21,7 @@
         <ul class="submenu">
           <li><a href="FPropietarios.php">Crear</a></li>
           <li><a href="CPropietarios.php">Leer</a></li>
-          <li><a href="FUPropietarios.php">Actualizar</a></li>
-          <li><a href="FDPropietarios.php">Eliminar</a></li>
+         
         </ul>
       </li>
 
@@ -31,8 +30,7 @@
         <ul class="submenu">
           <li><a href="FConductores.php">Crear</a></li>
           <li><a href="CConductores.php">Leer</a></li>
-          <li><a href="FUConductores.php">Actualizar</a></li>
-          <li><a href="FDConductores.php">Eliminar</a></li>
+          
         </ul>
       </li>
   
@@ -41,8 +39,7 @@
         <ul class="submenu">
           <li><a href="FLicencias.php">Crear</a></li>
           <li><a href="CLicencias.php">Leer</a></li>
-          <li><a href="FULicencias.php">Actualizar</a></li>
-          <li><a href="FDLicencias.php">Eliminar</a></li>
+        
         </ul>
       </li>
 
@@ -51,8 +48,7 @@
         <ul class="submenu">
           <li><a href="FVehiculos.php">Crear</a></li>
           <li><a href="CVehiculos.php">Leer</a></li>
-          <li><a href="FUVehiculos.php">Actualizar</a></li>
-          <li><a href="FDVehiculos.php">Eliminar</a></li>
+          
         </ul>
       </li>
   
@@ -61,8 +57,7 @@
         <ul class="submenu">
           <li><a href="FTarjetas.php">Crear</a></li>
           <li><a href="CTarjetas.php">Leer</a></li>
-          <li><a href="FUTarjetas.php">Actualizar</a></li>
-          <li><a href="FDTarjetas.php">Eliminar</a></li>
+         
         </ul>
       </li>
       
@@ -73,8 +68,7 @@
         <ul class="submenu">
           <li><a href="FTenencias.php">Crear</a></li>
           <li><a href="CTenencias.php">Leer</a></li>
-          <li><a href="FUTenencias.php">Actualizar</a></li>
-          <li><a href="FDTenencias.php">Eliminar</a></li>
+          
         </ul>
       </li>
      
@@ -83,8 +77,7 @@
         <ul class="submenu">
           <li><a href="FVerificaciones.php">Crear</a></li>
           <li><a href="CVerificaciones.php">Leer</a></li>
-          <li><a href="FUVerificaciones.php">Actualizar</a></li>
-          <li><a href="FDVerificaciones.php">Eliminar</a></li>
+         
         </ul>
       </li>
       <li class="dropdown">
@@ -92,8 +85,7 @@
         <ul class="submenu">
           <li><a href="FCentrosVerificacion.php">Crear</a></li>
           <li><a href="CCentrosVerificacion.php">Leer</a></li>
-          <li><a href="FUCentrosVerificacion.php">Actualizar</a></li>
-          <li><a href="FDCentrosVerificacion.php">Eliminar</a></li>
+          
         </ul>
       </li>
 
@@ -102,8 +94,7 @@
         <ul class="submenu">
           <li><a href="FMultas.php">Crear</a></li>
           <li><a href="CMultas.php">Leer</a></li>
-          <li><a href="FUMultas.php">Actualizar</a></li>
-          <li><a href="FDMultas.php">Eliminar</a></li>
+
         </ul>
       </li>
     </ul>
